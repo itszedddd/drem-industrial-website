@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — DREM Industrial Sales, Inc.</title>
+  <meta name="description" content="Get in touch with DREM Industrial Sales, Inc. Request a quotation, ask about products, or reach out for technical support.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-text">
+          <span class="brand-name">DREM</span>
+          <span class="brand-tagline">Industrial Sales, Inc.</span>
+        </div>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="products.html">Products</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="clients.html">Clients</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="contact.html" class="nav-cta">Get a Quote</a>
+      </div>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <img src="assets/images/hero-bg.jpg" alt="Contact DREM Industrial">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="separator">/</span>
+          <span>Contact Us</span>
+        </div>
+        <h1 class="page-hero-title">Get in Touch</h1>
+        <p class="page-hero-subtitle">Have questions or need a quotation? We'd love to hear from you. Reach out to our team today.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section" style="padding-top: 100px;">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div>
+          <div class="section-header">
+            <span class="section-label">Contact Information</span>
+            <h2 class="section-title">Let's Talk Business</h2>
+            <p class="section-subtitle">Reach out to us through any of the channels below. We typically respond within 24 hours.</p>
+          </div>
+          <div class="contact-info-cards">
+            <div class="contact-info-card animate-on-scroll">
+              <div class="icon">
+                <i class="fas fa-location-dot"></i>
+              </div>
+              <div>
+                <h4>Office Address</h4>
+                <p>Metro Manila, Philippines<br>(Full address to be provided by client)</p>
+              </div>
+            </div>
+            <a href="tel:+639XXXXXXXXX" class="contact-info-card animate-on-scroll delay-1">
+              <div class="icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <h4>Call Us</h4>
+                <p>+63 9XX XXX XXXX<br>Monday - Saturday, 8AM - 5PM</p>
+              </div>
+            </a>
+            <a href="mailto:info@dremindustrial.com" class="contact-info-card animate-on-scroll delay-2">
+              <div class="icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h4>Email Us</h4>
+                <p>info@dremindustrial.com<br>sales@dremindustrial.com</p>
+              </div>
+            </a>
+            <div class="contact-info-card animate-on-scroll delay-3">
+              <div class="icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <h4>Business Hours</h4>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM<br>Saturday: 8:00 AM - 12:00 PM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form animate-on-scroll delay-1">
+          <div id="formContent">
+            <h3>Send Us a Message</h3>
+            <p class="form-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+            <form id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Juan" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Dela Cruz" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input type="email" id="email" name="email" placeholder="juan@company.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+63 9XX XXX XXXX">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select a subject</option>
+                  <option value="quotation">Request a Quotation</option>
+                  <option value="inquiry">Product Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="partnership">Business Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="company">Company Name</label>
+                <input type="text" id="company" name="company" placeholder="Your Company Name">
+              </div>
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Please describe your requirements, list the products you need, or ask any questions..." required rows="5"></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit" class="btn btn-primary">
+                  <i class="fas fa-paper-plane"></i>
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <i class="fas fa-circle-check"></i>
+            <h3>Message Sent Successfully!</h3>
+            <p>Thank you for reaching out. Our team will review your message and get back to you within 24 hours.</p>
+            <br>
+            <a href="index.html" class="btn btn-primary">
+              <i class="fas fa-home"></i>
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP ===== -->
+  <section class="map-section">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d123533.30178937923!2d120.93439867032089!3d14.600457983365534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397ca03571ec38b%3A0x69d1d5751069c11f!2sManila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1697000000000!5m2!1sen!2sph"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="DREM Industrial Sales Office Location">
+    </iframe>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-text">
+            <span class="brand-name">DREM</span>
+            <span class="brand-tagline">Industrial Sales, Inc.</span>
+          </div>
+          <p>Your trusted partner for quality industrial products and solutions. Serving businesses across the Philippines.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="products.html">Industrial Valves</a></li>
+            <li><a href="products.html">Steel Pipes</a></li>
+            <li><a href="products.html">Pipe Fittings</a></li>
+            <li><a href="products.html">Industrial Pumps</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <ul>
+            <li><a href="tel:+639XXXXXXXXX"><i class="fas fa-phone"></i> +63 9XX XXX XXXX</a></li>
+            <li><a href="mailto:info@dremindustrial.com"><i class="fas fa-envelope"></i> info@dremindustrial.com</a></li>
+            <li><a href="#"><i class="fas fa-location-dot"></i> Metro Manila, Philippines</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 DREM Industrial Sales, Inc. All rights reserved.</p>
+        <p>Designed & Developed with <i class="fas fa-heart" style="color: var(--error);"></i></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
