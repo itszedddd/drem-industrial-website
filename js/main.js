@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
+    threshold: 0.05,
+    rootMargin: '0px 0px 60px 0px'
   });
 
   animateElements.forEach(el => observer.observe(el));
@@ -163,5 +163,138 @@ document.addEventListener('DOMContentLoaded', () => {
     navbar.classList.add('scrolled');
     window.removeEventListener('scroll', handleNavbarScroll);
   }
+
+  // ---------- Email Redirect & Quick Copy Helper ----------
+  const initEmailHelper = () => {
+    // Create toast container if it doesn't exist
+    let toast = document.getElementById('emailToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'emailToast';
+      toast.className = 'email-toast';
+      toast.setAttribute('role', 'alert');
+      toast.innerHTML = `
+        <div class="email-toast-content">
+          <div class="email-toast-title">
+            <i class="fas fa-paper-plane"></i>
+            <span id="emailToastTitle">Opened Gmail Compose</span>
+          </div>
+          <div class="email-toast-desc" id="emailToastDesc">Addressed to drem747@drem.com.ph</div>
+          <div class="email-toast-actions">
+            <button type="button" class="email-toast-btn copy-btn" id="emailToastCopy">
+              <i class="fas fa-copy"></i> Copy Address
+            </button>
+            <a href="#" class="email-toast-btn app-btn" id="emailToastMailto">
+              <i class="fas fa-envelope"></i> Default Mail App
+            </a>
+          </div>
+        </div>
+        <button type="button" class="email-toast-close" id="emailToastClose" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+      `;
+      document.body.appendChild(toast);
+    }
+
+    let toastTimer = null;
+    const showToast = (email, title = 'Opened Gmail Compose') => {
+      const titleEl = document.getElementById('emailToastTitle');
+      const descEl = document.getElementById('emailToastDesc');
+      const copyBtn = document.getElementById('emailToastCopy');
+      const mailtoLink = document.getElementById('emailToastMailto');
+
+      if (titleEl) titleEl.textContent = title;
+      if (descEl) descEl.textContent = `Addressed to ${email}`;
+      if (mailtoLink) {
+        mailtoLink.href = `mailto:${email}?subject=${encodeURIComponent('Inquiry - DREM Industrial Sales')}`;
+      }
+      if (copyBtn) {
+        copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Address';
+        copyBtn.onclick = () => copyToClipboard(email, copyBtn);
+      }
+
+      toast.classList.add('show');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 7000);
+    };
+
+    const closeBtn = document.getElementById('emailToastClose');
+    if (closeBtn) {
+      closeBtn.onclick = () => {
+        toast.classList.remove('show');
+        if (toastTimer) clearTimeout(toastTimer);
+      };
+    }
+
+    // Helper to copy to clipboard with fallback
+    const copyToClipboard = (text, triggerEl) => {
+      const originalHtml = triggerEl ? triggerEl.innerHTML : '';
+      const handleSuccess = () => {
+        if (triggerEl) {
+          triggerEl.classList.add('copied');
+          triggerEl.innerHTML = '<i class="fas fa-check"></i> Copied!';
+          setTimeout(() => {
+            triggerEl.classList.remove('copied');
+            triggerEl.innerHTML = originalHtml;
+          }, 2000);
+        }
+      };
+
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(handleSuccess).catch(() => fallbackCopy(text, handleSuccess));
+      } else {
+        fallbackCopy(text, handleSuccess);
+      }
+    };
+
+    const fallbackCopy = (text, callback) => {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.focus();
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        if (callback) callback();
+      } catch (err) {
+        console.error('Failed to copy text', err);
+      }
+      document.body.removeChild(textarea);
+    };
+
+    // Attach click handlers to email action buttons
+    document.querySelectorAll('.email-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const email = btn.getAttribute('data-email') || 'drem747@drem.com.ph';
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent('Inquiry - DREM Industrial Sales')}`;
+        
+        // Ensure link opens Gmail
+        btn.setAttribute('href', gmailUrl);
+        btn.setAttribute('target', '_blank');
+        btn.setAttribute('rel', 'noopener noreferrer');
+
+        // Show helper toast with fallback mail app and copy options
+        setTimeout(() => {
+          showToast(email);
+        }, 300);
+      });
+    });
+
+    // Attach click handlers to quick copy buttons
+    document.querySelectorAll('.copy-pill, .copy-email-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const email = btn.getAttribute('data-email') || 'drem747@drem.com.ph';
+        copyToClipboard(email, btn);
+      });
+    });
+  };
+
+  initEmailHelper();
 
 });
