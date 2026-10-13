@@ -146,23 +146,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- Active Nav Link ----------
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
+  // ---------- Smooth Scrolling for In-Page Anchor Links ----------
+  const getNavbarOffset = () => {
+    return navbar ? navbar.offsetHeight + 10 : 80;
+  };
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const targetId = link.getAttribute('href');
+      if (!targetId || targetId === '#') return;
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        const offset = getNavbarOffset();
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+
+        if (history.pushState) {
+          history.pushState(null, null, targetId);
+        }
+
+        document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach(l => l.classList.remove('active'));
+        if (!link.classList.contains('nav-cta')) {
+          link.classList.add('active');
+        }
+      }
+    });
   });
 
-  // ---------- Inner Page Navbar (always scrolled for non-hero pages) ----------
-  const hero = document.querySelector('.hero');
-  if (!hero && navbar) {
-    navbar.classList.add('scrolled');
-    window.removeEventListener('scroll', handleNavbarScroll);
+  // Handle direct hash navigation on page load
+  if (window.location.hash) {
+    const hashTarget = document.querySelector(window.location.hash);
+    if (hashTarget) {
+      setTimeout(() => {
+        const offset = getNavbarOffset();
+        const elementPosition = hashTarget.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 200);
+    }
   }
+
+  // ---------- ScrollSpy for Active Menu State ----------
+  const trackedSections = document.querySelectorAll('section[id]');
+  const inPageNavLinks = document.querySelectorAll('.nav-links a[href^="#"]:not(.nav-cta)');
+
+  const handleScrollSpy = () => {
+    const scrollPos = window.scrollY + getNavbarOffset() + 40;
+    let currentId = '';
+
+    trackedSections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      if (scrollPos >= top && scrollPos < top + height) {
+        currentId = '#' + section.getAttribute('id');
+      }
+    });
+
+    if (currentId) {
+      inPageNavLinks.forEach(link => {
+        if (link.getAttribute('href') === currentId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+  };
+
+  window.addEventListener('scroll', handleScrollSpy, { passive: true });
+  handleScrollSpy(); // Initial call
 
   // ---------- Email Redirect & Quick Copy Helper ----------
   const initEmailHelper = () => {
