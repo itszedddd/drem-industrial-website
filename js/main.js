@@ -397,4 +397,105 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initEmailHelper();
 
+  // ---------- Project Showcase Filtering & Lightbox Modal ----------
+  const initProjectGallery = () => {
+    const filterBtns = document.querySelectorAll('.project-filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const modal = document.getElementById('projectModal');
+    if (!projectCards.length) return;
+
+    // Filter functionality
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter') || 'all';
+
+        projectCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+      });
+    });
+
+    // Lightbox modal functionality (Photo Zoom)
+    if (modal) {
+      const modalImg = document.getElementById('modalImg');
+      const modalCategory = document.getElementById('modalCategory');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalClose = document.getElementById('modalCloseBtn');
+      const modalPrev = document.getElementById('modalPrevBtn');
+      const modalNext = document.getElementById('modalNextBtn');
+
+      let currentCardIndex = 0;
+      const getVisibleCards = () => Array.from(projectCards).filter(c => !c.classList.contains('is-hidden'));
+
+      const updateModal = (card) => {
+        if (!card) return;
+        const img = card.getAttribute('data-img');
+        const title = card.getAttribute('data-title');
+        const category = card.getAttribute('data-category-name');
+
+        if (modalImg) {
+          modalImg.src = img;
+          modalImg.alt = title;
+        }
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalCategory) modalCategory.textContent = category;
+      };
+
+      const openModal = (card) => {
+        const visible = getVisibleCards();
+        currentCardIndex = visible.indexOf(card);
+        updateModal(card);
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      };
+
+      const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      projectCards.forEach(card => {
+        card.addEventListener('click', () => openModal(card));
+      });
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modal.classList.contains('active')) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      });
+
+      const showPrev = () => {
+        const visible = getVisibleCards();
+        if (!visible.length) return;
+        currentCardIndex = (currentCardIndex - 1 + visible.length) % visible.length;
+        updateModal(visible[currentCardIndex]);
+      };
+
+      const showNext = () => {
+        const visible = getVisibleCards();
+        if (!visible.length) return;
+        currentCardIndex = (currentCardIndex + 1) % visible.length;
+        updateModal(visible[currentCardIndex]);
+      };
+
+      if (modalPrev) modalPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+      if (modalNext) modalNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+    }
+  };
+
+  initProjectGallery();
+
 });
