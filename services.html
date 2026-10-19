@@ -13,15 +13,12 @@
   <!-- ===== NAVIGATION ===== -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        <div class="nav-logo-text">
-          <span class="brand-name">DREM</span>
-          <span class="brand-tagline">Industrial Sales, Inc.</span>
-        </div>
+      <a href="index.html" class="nav-logo" aria-label="DREM Industrial Sales, Inc.">
+        <img src="assets/images/logo.png" alt="DREM Industrial Sales, Inc." class="nav-logo-img">
       </a>
       <div class="nav-links" id="navLinks">
         <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
+        <a href="about.html">Our Company</a>
         <a href="products.html">Our Products</a>
         <a href="services.html" class="active">Our Services</a>
         <a href="clients.html">Our Clients</a>
@@ -48,77 +45,91 @@
           <span class="separator">/</span>
           <span>Our Services</span>
         </div>
-        <h1 class="page-hero-title">Our Services</h1>
+        <h1 class="page-hero-title" style="color: var(--accent-500);">Our Services</h1>
         <p class="page-hero-subtitle">Comprehensive industrial services tailored to meet your project requirements and business goals.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== CIVIL WORKS ===== -->
-  <section class="services-detail-section" id="civil-works">
+  <!-- ===== SERVICES LISTING ===== -->
+  <section class="services-detail-section" id="services-list">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Service</span>
-        <h2 class="section-title">Civil Works</h2>
-        <p class="section-subtitle">Professional construction and civil engineering services for your industrial projects.</p>
-      </div>
       <div class="product-list-grid">
+        <!-- Water Treatment Services -->
+        <div class="product-list-card animate-on-scroll">
+          <div class="product-list-icon">
+            <i class="fas fa-droplet"></i>
+          </div>
+          <div class="product-list-content">
+            <h3 style="color: var(--accent-500);">Water Treatment Services</h3>
+            <p>Water treatment for boiler, cooling tower, and evaporative condenser</p>
+          </div>
+        </div>
+
+        <!-- Descaling Services -->
+        <div class="product-list-card animate-on-scroll delay-1">
+          <div class="product-list-icon">
+            <i class="fas fa-screwdriver-wrench"></i>
+          </div>
+          <div class="product-list-content">
+            <h3 style="color: var(--accent-500);">Descaling Services</h3>
+            <p>Descaling of boiler, evaporative condenser, cooling tower, shell and tube condensers, radiator, ammonia compressor, piping, bottle washer, and heat exchanger</p>
+          </div>
+        </div>
+
+        <!-- Boiler Repair and Maintenance Services -->
+        <div class="product-list-card animate-on-scroll delay-2">
+          <div class="product-list-icon">
+            <i class="fas fa-fire-burner"></i>
+          </div>
+          <div class="product-list-content">
+            <h3 style="color: var(--accent-500);">Boiler Repair and Maintenance Services</h3>
+            <p>Comprehensive inspection, preventive servicing, refractory repairs, and mechanical overhaul of industrial boiler units.</p>
+          </div>
+        </div>
+
+        <!-- Civil Works -->
         <div class="product-list-card animate-on-scroll">
           <div class="product-list-icon">
             <i class="fas fa-helmet-safety"></i>
           </div>
           <div class="product-list-content">
-            <h3>Construction</h3>
-            <p>Comprehensive construction services for industrial facilities, commercial buildings, and infrastructure projects. We manage projects from planning through completion with a commitment to quality and safety.</p>
+            <h3 style="color: var(--accent-500);">Civil Works</h3>
+            <ul style="list-style: disc; margin-left: 20px; color: var(--neutral-600); line-height: 1.6; margin-top: 8px;">
+              <li>Construction, civil, mechanical, electrical, and fabrication works</li>
+              <li>Epoxy, self-levelling, and general painting services</li>
+              <li>Roofing installation and repair</li>
+              <li>Architectural and design works</li>
+              <li>Supply and installation of office furniture, carpet, laminated flooring, and blinds</li>
+              <li>Finishing and carpentry works</li>
+              <li>Supply and installation of glass and aluminum</li>
+              <li>Waterproofing</li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ===== PERMITS & LICENSES ===== -->
-  <section class="services-detail-section alt" id="permits">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Service</span>
-        <h2 class="section-title">Permits and Licenses Facilitation</h2>
-        <p class="section-subtitle">Expert assistance in obtaining and renewing regulatory permits and licenses.</p>
-      </div>
-      <div class="product-list-grid">
-        <div class="product-list-card animate-on-scroll">
-          <div class="product-list-icon">
-            <i class="fas fa-file-circle-check"></i>
-          </div>
-          <div class="product-list-content">
-            <h3>New DOLE Permit-to-Operate (PTO)</h3>
-            <p>Facilitation of new Department of Labor and Employment permit-to-operate applications for your business operations.</p>
-          </div>
-        </div>
+        <!-- Permit Facilitation -->
         <div class="product-list-card animate-on-scroll delay-1">
           <div class="product-list-icon">
-            <i class="fas fa-file-pen"></i>
+            <i class="fas fa-file-signature"></i>
           </div>
           <div class="product-list-content">
-            <h3>Renewal DOLE PTO</h3>
-            <p>Facilitation of DOLE permit-to-operate renewals, ensuring compliance and uninterrupted business operations.</p>
+            <h3 style="color: var(--accent-500);">Permit Facilitation</h3>
+            <ul style="list-style: disc; margin-left: 20px; color: var(--neutral-600); line-height: 1.6; margin-top: 8px;">
+              <li>DOLE PTO new and renewal</li>
+              <li>DENR PTO renewal</li>
+            </ul>
           </div>
         </div>
+
+        <!-- Emission Testing -->
         <div class="product-list-card animate-on-scroll delay-2">
-          <div class="product-list-icon">
-            <i class="fas fa-leaf"></i>
-          </div>
-          <div class="product-list-content">
-            <h3>Renewal DENR PTO</h3>
-            <p>Facilitation of Department of Environment and Natural Resources permit-to-operate renewals for environmental compliance.</p>
-          </div>
-        </div>
-        <div class="product-list-card animate-on-scroll delay-3">
           <div class="product-list-icon">
             <i class="fas fa-smog"></i>
           </div>
           <div class="product-list-content">
-            <h3>DENR Emission Testing</h3>
-            <p>Emission testing of boilers, generator sets (gensets), and ambient air quality assessment as required by DENR regulations.</p>
+            <h3 style="color: var(--accent-500);">Emission Testing of Boiler, Genset, and Ambient Air</h3>
+            <p>Accredited stack and ambient air sampling, emissions compliance certification for DOLE and DENR-EMB regulatory standards.</p>
           </div>
         </div>
       </div>
@@ -129,8 +140,7 @@
   <section class="section" id="projects-gallery" style="background: var(--neutral-50); padding: 80px 0;">
     <div class="container">
       <div class="section-header center">
-        <span class="section-label">Field Execution</span>
-        <h2 class="section-title">Recent Projects & Field Installations</h2>
+        <h2 class="section-title" style="color: var(--accent-500);">Recent Projects</h2>
         <p class="section-subtitle">A visual portfolio of our on-site civil works, refractory installations, fire protection setups, and mechanical plant projects across the Philippines.</p>
       </div>
 
@@ -454,17 +464,16 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="footer-logo-text">
-            <span class="brand-name">DREM</span>
-            <span class="brand-tagline">Industrial Sales, Inc.</span>
-          </div>
+          <a href="index.html" aria-label="DREM Industrial Sales, Inc.">
+            <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="footer-logo-img">
+          </a>
           <p>Your trusted partner for quality industrial products and solutions. Serving businesses across the Philippines.</p>
         </div>
         <div class="footer-column">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html">Our Company</a></li>
             <li><a href="products.html">Our Products</a></li>
             <li><a href="services.html">Our Services</a></li>
             <li><a href="clients.html">Our Clients</a></li>

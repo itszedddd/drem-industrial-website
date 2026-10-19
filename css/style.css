@@ -1501,6 +1501,16 @@ h6 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+.footer-brand .footer-logo-img,
+.footer-brand-block .footer-logo-img {
+  height: 56px;
+  max-height: 56px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 16px;
+}
+
 .footer-brand .footer-logo-text .brand-name {
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -2891,6 +2901,15 @@ h6 {
   grid-template-columns: 2fr 1fr 1.5fr;
   gap: 40px;
   padding-bottom: 40px;
+}
+
+.footer-logo-img {
+  height: 60px;
+  max-height: 60px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 14px;
 }
 
 .footer-brand-block .brand-name {

@@ -9,6 +9,410 @@
     content="DREM Industrial Sales, Inc. — Premier industrial supplier in the Philippines for maintenance chemicals, refractories, firefighting equipment, civil works, and permits facilitation.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ========================================================
+       Executive UI, Typography & Layout Polish for Main Site
+       ======================================================== */
+    :root {
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      color: #334155;
+      background-color: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Section Titles: Modern Sans-Serif, Orange Accent, Clean Scale */
+    .section-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 2.25rem !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.025em !important;
+      color: var(--accent-500) !important;
+      margin-bottom: 12px !important;
+      line-height: 1.25 !important;
+    }
+
+    .section-subtitle {
+      font-size: 1.02rem !important;
+      color: var(--neutral-500) !important;
+      max-width: 680px;
+      margin: 0 auto 36px auto;
+      line-height: 1.65;
+    }
+
+    /* Our Company: Overview Paragraph Spacing & Typography */
+    .about-overview-card {
+      padding: 36px 40px !important;
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid var(--neutral-200);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      margin-bottom: 32px;
+    }
+
+    .about-overview-card p.lead-paragraph {
+      font-size: 1.02rem !important;
+      line-height: 1.8 !important;
+      color: var(--neutral-700) !important;
+      margin-bottom: 18px !important;
+    }
+
+    .about-overview-card p.lead-paragraph:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .mv-card h3 {
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 8px !important;
+    }
+
+    .mv-card p {
+      font-size: 0.96rem !important;
+      line-height: 1.65 !important;
+      color: var(--neutral-600) !important;
+    }
+
+    .core-values-title {
+      font-size: 1.35rem !important;
+      font-weight: 700 !important;
+    }
+
+    .value-item h4 {
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 6px !important;
+    }
+
+    .value-item p {
+      font-size: 0.9rem !important;
+      line-height: 1.55 !important;
+      color: var(--neutral-600) !important;
+    }
+
+    /* Products Section Clean List Styling */
+    .simple-products-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .product-item-card {
+      background: #ffffff;
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      padding: 30px 28px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      transition: all var(--transition-base);
+    }
+
+    .product-item-card:hover {
+      border-color: var(--primary-300);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .product-item-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .product-item-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .product-item-header h3 {
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      color: var(--neutral-900) !important;
+      margin: 0 !important;
+    }
+
+    /* Clean Items List */
+    .clean-item-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .clean-item-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--neutral-100);
+      font-size: 0.95rem;
+      color: var(--neutral-700);
+      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .clean-item-list li:first-child {
+      padding-top: 0;
+    }
+
+    .clean-item-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .clean-item-list li::before {
+      content: "•";
+      color: var(--accent-500);
+      font-size: 1.15rem;
+      line-height: 1.2;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* Services Section Layout & Whitespace Fixes */
+    .simple-services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .service-item-card {
+      background: #ffffff;
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      transition: all var(--transition-base);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-item-card:hover {
+      border-color: var(--primary-300);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .service-item-card.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .service-item-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .service-item-header h3 {
+      font-size: 1.2rem !important;
+      font-weight: 700 !important;
+      color: var(--neutral-900) !important;
+      margin: 0 !important;
+      line-height: 1.35;
+    }
+
+    .service-item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--primary-50);
+      color: var(--primary-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Civil Works 2-column subgrid for balance */
+    .civil-works-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 28px;
+    }
+
+    .civil-works-columns li {
+      padding: 9px 0;
+    }
+
+    @media (max-width: 768px) {
+      .simple-products-grid,
+      .simple-services-grid,
+      .civil-works-columns {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Completed Projects Section - Centered Odd Projects */
+    .completed-projects-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 24px !important;
+      margin-top: 24px !important;
+    }
+
+    .completed-projects-grid .project-card {
+      flex: 0 0 calc((100% - (2 * 24px)) / 3) !important;
+      max-width: calc((100% - (2 * 24px)) / 3) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      background: #ffffff;
+      border: 1px solid var(--neutral-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      transition: all var(--transition-base);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 992px) {
+      .completed-projects-grid .project-card {
+        flex: 0 0 calc((100% - 24px) / 2) !important;
+        max-width: calc((100% - 24px) / 2) !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .completed-projects-grid .project-card {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
+
+    .completed-projects-grid .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+      border-color: var(--primary-300);
+    }
+
+    .completed-projects-grid .project-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      overflow: hidden;
+      background: var(--neutral-100);
+    }
+
+    .completed-projects-grid .project-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .completed-projects-grid .project-card:hover .project-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .completed-projects-grid .project-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .completed-projects-grid .project-card:hover .project-card-overlay {
+      opacity: 1;
+    }
+
+    .completed-projects-grid .project-zoom-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .completed-projects-grid .project-body {
+      padding: 16px 18px;
+      background: #ffffff;
+      text-align: center;
+      border-top: 1px solid var(--neutral-100);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .completed-projects-grid .project-title {
+      font-size: 1.05rem !important;
+      font-weight: 600 !important;
+      color: var(--neutral-900) !important;
+      margin: 0 !important;
+      line-height: 1.35;
+    }
+
+    /* Client Logos Grid - Centering odd/trailing logos */
+    .clients-logo-grid {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      gap: 24px !important;
+    }
+
+    .client-logo-card {
+      flex: 0 0 calc((100% - (3 * 24px)) / 4) !important;
+      max-width: calc((100% - (3 * 24px)) / 4) !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    @media (max-width: 1024px) {
+      .client-logo-card {
+        flex: 0 0 calc((100% - (2 * 24px)) / 3) !important;
+        max-width: calc((100% - (2 * 24px)) / 3) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .client-logo-card {
+        flex: 0 0 calc((100% - 24px) / 2) !important;
+        max-width: calc((100% - 24px) / 2) !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .client-logo-card {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+      }
+    }
+
+    /* Enlarge Pascual logo */
+    .client-logo-card img[src*="pascual"] {
+      max-height: 80px !important;
+      max-width: 180px !important;
+      transform: scale(1.18);
+    }
+
+    .client-logo-card:hover img[src*="pascual"] {
+      transform: scale(1.26) !important;
+    }
+
+    /* Modal category hide when empty */
+    #modalCategory:empty {
+      display: none !important;
+    }
+  </style>
 </head>
 
 <body>
@@ -18,18 +422,13 @@
     <nav class="navbar" id="navbar">
       <div class="container">
         <a href="#about" class="nav-logo" aria-label="DREM Industrial Sales, Inc.">
-          <img src="assets/images/logo.png" alt="DREM Industrial Sales Logo" class="nav-logo-img"
-            onerror="this.style.display='none'">
-          <div class="nav-logo-text">
-            <span class="brand-name">DREM</span>
-            <span class="brand-tagline">Industrial Sales, Inc.</span>
-          </div>
+          <img src="assets/images/logo.png" alt="DREM Industrial Sales, Inc." class="nav-logo-img">
         </a>
         <div class="nav-links" id="navLinks">
           <a href="#about" class="nav-link active">Our Company</a>
           <a href="#products" class="nav-link">Our Products</a>
           <a href="#services" class="nav-link">Our Services</a>
-          <a href="#clients" class="nav-link">Our Major Clients</a>
+          <a href="#clients" class="nav-link">Our Clients</a>
           <a href="#contact" class="nav-cta">Contact Us</a>
         </div>
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu">
@@ -46,20 +445,19 @@
     <section class="section about-section about-section-top" id="about">
       <div class="container">
         <div class="section-header center">
-          <span class="section-label">About Us</span>
-          <h1 class="section-title">Our Company</h1>
-          <p class="section-subtitle">Dedicated to delivering high-grade industrial products, engineering solutions, and
-            reliable client service across the Philippines for over 40 years.</p>
+          <h1 class="section-title" style="color: var(--accent-500);">Our Company</h1>
         </div>
 
         <!-- Company Overview -->
         <div class="about-overview-card animate-on-scroll">
           <p class="lead-paragraph">
-            DREM Industrial Sales, Inc. is a trusted partner for industrial products and engineering services in the
-            Philippines. With over 40 years of continuous industry experience, we supply certified maintenance
-            chemicals, high-temperature refractories, firefighting systems, and provide reliable civil construction and
-            government permits facilitation. We work closely with our clients to maintain operational excellence, plant
-            safety, and regulatory compliance.
+            Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading, architectural design, and construction / civil, mechanical, and electrical works.
+          </p>
+          <p class="lead-paragraph">
+            It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a corporation on May 30, 1991.
+          </p>
+          <p class="lead-paragraph">
+            Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality products and services, building lasting client relationships through trust, reliability, and exceptional customer support, and nurturing teamwork to foster continuous growth and success of everyone in the company.
           </p>
         </div>
 
@@ -70,8 +468,7 @@
               <i class="fas fa-bullseye"></i>
             </div>
             <h3>Our Mission</h3>
-            <p>To provide the highest quality industrial products and services at competitive prices, while building
-              lasting relationships with our clients through trust, reliability, and exceptional customer support.</p>
+            <p>To provide our clients with our products and services with assurance of quality and effectiveness.</p>
           </div>
 
           <div class="mv-card">
@@ -79,8 +476,7 @@
               <i class="fas fa-eye"></i>
             </div>
             <h3>Our Vision</h3>
-            <p>To be the most trusted and preferred industrial supplier in the Philippines, recognized for our commitment
-              to quality, innovation, and sustainable business practices that drive industry growth.</p>
+            <p>To be the Philippines' top-of-mind and preferred provider of industrial products and of civil, architectural, mechanical, and electrical works.</p>
           </div>
         </div>
 
@@ -156,8 +552,7 @@
     <section class="section products-section" id="products">
       <div class="container">
         <div class="section-header center">
-          <span class="section-label">Product Portfolio</span>
-          <h2 class="section-title">Our Products</h2>
+          <h2 class="section-title" style="color: var(--accent-500);">Our Products</h2>
           <p class="section-subtitle">A curated portfolio of industrial-grade materials, specialized chemicals, and fire
             protection equipment.</p>
         </div>
@@ -170,16 +565,15 @@
                 <i class="fas fa-flask"></i>
               </div>
               <div>
-                <span class="item-badge">Product Line</span>
                 <h3>Mardeus Products</h3>
               </div>
             </div>
             <ul class="clean-item-list">
-              <li>
-                <strong>Maintenance Chemicals</strong>
-                <p>Industrial-grade maintenance chemicals formulated for degreasing, descaling, cleaning, and preventative
-                  equipment maintenance to sustain continuous machinery operation.</p>
-              </li>
+              <li>Maintenance chemicals</li>
+              <li>Special paints and coatings</li>
+              <li>Special lubes, oil, and greases</li>
+              <li>Water treatment chemicals</li>
+              <li>Water softener equipment</li>
             </ul>
           </div>
 
@@ -190,16 +584,13 @@
                 <i class="fas fa-fire-burner"></i>
               </div>
               <div>
-                <span class="item-badge">Product Line</span>
                 <h3>Reed Seal Products</h3>
               </div>
             </div>
             <ul class="clean-item-list">
-              <li>
-                <strong>Castables and Moldable Refractories</strong>
-                <p>Heat-resistant castable and moldable refractory materials engineered for extreme thermal environments
-                  including industrial furnaces, kilns, incinerators, and boilers.</p>
-              </li>
+              <li>Castables and moldable refractories</li>
+              <li>Gaskets and packings (asbestos and non-asbestos)</li>
+              <li>Industrial insulation</li>
             </ul>
           </div>
 
@@ -210,7 +601,6 @@
                 <i class="fas fa-fire-extinguisher"></i>
               </div>
               <div>
-                <span class="item-badge">Equipment Line</span>
                 <h3>Firefighting Equipment</h3>
               </div>
             </div>
@@ -219,28 +609,28 @@
                 <i class="fas fa-gauge-high"></i>
                 <div>
                   <strong>Pumps</strong>
-                  <p>Certified industrial fire pumps engineered for dependable pressurized water supply in fire suppression systems.</p>
+                  <p>Certified industrial fire pumps for pressurized suppression water supply.</p>
                 </div>
               </div>
               <div class="sub-product-item">
                 <i class="fas fa-gears"></i>
                 <div>
                   <strong>Motors</strong>
-                  <p>Heavy-duty electric and diesel motor systems designed for dependable fire pump operation during critical events.</p>
+                  <p>Heavy-duty electric and diesel drivers for fire pump system actuation.</p>
                 </div>
               </div>
               <div class="sub-product-item">
                 <i class="fas fa-sliders"></i>
                 <div>
                   <strong>Controls</strong>
-                  <p>Automated fire pump controllers, monitoring panels, and safety switchboards for full system readiness.</p>
+                  <p>Automated fire pump controller panels and safety instrumentation.</p>
                 </div>
               </div>
               <div class="sub-product-item">
                 <i class="fas fa-faucet-drip"></i>
                 <div>
                   <strong>Valves</strong>
-                  <p>Alarm check valves, butterfly valves, OS&Y gate valves, and pressure control valves for sprinkler lines.</p>
+                  <p>Alarm check valves, butterfly valves, OS&Y gates, and pressure regulators.</p>
                 </div>
               </div>
             </div>
@@ -253,362 +643,401 @@
     <section class="section services-section" id="services">
       <div class="container">
         <div class="section-header center">
-          <span class="section-label">Industrial Solutions</span>
-          <h2 class="section-title">Our Services</h2>
+          <h2 class="section-title" style="color: var(--accent-500);">Our Services</h2>
           <p class="section-subtitle">Professional civil engineering, construction works, and regulatory compliance
             facilitation.</p>
         </div>
 
         <div class="simple-services-grid">
-          <!-- Civil Works -->
+          <!-- 1. Water Treatment Services -->
           <div class="service-item-card animate-on-scroll">
             <div class="service-item-header">
               <div class="service-item-icon">
-                <i class="fas fa-helmet-safety"></i>
+                <i class="fas fa-droplet"></i>
               </div>
               <div>
-                <span class="item-badge">Construction</span>
-                <h3>Civil Works</h3>
+                <h3>Water Treatment Services</h3>
               </div>
             </div>
             <ul class="clean-item-list">
-              <li>
-                <strong>Construction & Structural Works</strong>
-                <p>Comprehensive civil works and construction services for industrial plants, manufacturing facilities,
-                  commercial structures, concrete machinery foundations, and structural retrofitting.</p>
-              </li>
+              <li>Water treatment for boiler, cooling tower, and evaporative condenser</li>
             </ul>
           </div>
 
-          <!-- Permits & Licenses Facilitation -->
+          <!-- 2. Descaling Services -->
           <div class="service-item-card animate-on-scroll delay-1">
+            <div class="service-item-header">
+              <div class="service-item-icon">
+                <i class="fas fa-screwdriver-wrench"></i>
+              </div>
+              <div>
+                <h3>Descaling Services</h3>
+              </div>
+            </div>
+            <ul class="clean-item-list">
+              <li>Descaling of boiler, evaporative condenser, cooling tower, shell and tube condensers, radiator, ammonia compressor, piping, bottle washer, and heat exchanger</li>
+            </ul>
+          </div>
+
+          <!-- 3. Boiler Repair and Maintenance Services -->
+          <div class="service-item-card animate-on-scroll delay-2">
+            <div class="service-item-header">
+              <div class="service-item-icon">
+                <i class="fas fa-fire-burner"></i>
+              </div>
+              <div>
+                <h3>Boiler Repair and Maintenance Services</h3>
+              </div>
+            </div>
+            <ul class="clean-item-list">
+              <li>Comprehensive inspection, preventive servicing, refractory repairs, and mechanical overhaul of industrial boiler units</li>
+            </ul>
+          </div>
+
+          <!-- 4. Emission Testing -->
+          <div class="service-item-card animate-on-scroll delay-1">
+            <div class="service-item-header">
+              <div class="service-item-icon">
+                <i class="fas fa-smog"></i>
+              </div>
+              <div>
+                <h3>Emission Testing of Boiler, Genset, and Ambient Air</h3>
+              </div>
+            </div>
+            <ul class="clean-item-list">
+              <li>Accredited stack and ambient air sampling, emissions compliance certification for DOLE and DENR-EMB regulatory standards</li>
+            </ul>
+          </div>
+
+          <!-- 5. Permit Facilitation -->
+          <div class="service-item-card animate-on-scroll delay-2">
             <div class="service-item-header">
               <div class="service-item-icon">
                 <i class="fas fa-file-signature"></i>
               </div>
               <div>
-                <span class="item-badge">Regulatory Compliance</span>
-                <h3>Permits and Licenses Facilitation</h3>
+                <h3>Permit Facilitation</h3>
               </div>
             </div>
             <ul class="clean-item-list">
-              <li>
-                <strong>Facilitation of New DOLE Permit-to-Operate (PTO)</strong>
-                <p>Complete documentation, technical evaluation, and processing for new DOLE permits covering mechanical
-                  installations and plant machinery.</p>
-              </li>
-              <li>
-                <strong>Facilitation of Renewal DOLE PTO</strong>
-                <p>Timely renewal filing and compliance coordination to maintain uninterrupted operations and government safety approval.</p>
-              </li>
-              <li>
-                <strong>Facilitation of Renewal DENR PTO</strong>
-                <p>End-to-end facilitation of DENR environmental permits to operate, ensuring strict adherence to environmental regulations.</p>
-              </li>
-              <li>
-                <strong>DENR Emission Testing</strong>
-                <p>Certified emission testing of industrial boilers, generator sets (gensets), and ambient air quality testing per DENR standards.</p>
-              </li>
+              <li>DOLE PTO new and renewal</li>
+              <li>DENR PTO renewal</li>
+            </ul>
+          </div>
+
+          <!-- 6. Civil Works (Full Width for Balanced Layout) -->
+          <div class="service-item-card full-width animate-on-scroll">
+            <div class="service-item-header">
+              <div class="service-item-icon">
+                <i class="fas fa-helmet-safety"></i>
+              </div>
+              <div>
+                <h3>Civil Works</h3>
+              </div>
+            </div>
+            <ul class="clean-item-list civil-works-columns">
+              <li>Construction, civil, mechanical, electrical, and fabrication works</li>
+              <li>Epoxy, self-levelling, and general painting services</li>
+              <li>Roofing installation and repair</li>
+              <li>Architectural and design works</li>
+              <li>Supply and installation of office furniture, carpet, laminated flooring, and blinds</li>
+              <li>Finishing and carpentry works</li>
+              <li>Supply and installation of glass and aluminum</li>
+              <li>Waterproofing</li>
             </ul>
           </div>
         </div>
 
-        <!-- ===== FEATURED PROJECTS & FIELD WORK SHOWCASE (10 Projects) ===== -->
+        <!-- ===== COMPLETED PROJECTS ===== -->
         <div class="projects-showcase" id="projects">
           <div class="projects-showcase-header">
-            <span class="section-label">Field Execution</span>
-            <h3 class="section-title" style="font-size: 2.2rem; margin-bottom: 12px;">Recent Projects & Field Installations</h3>
-            <p class="section-subtitle">A visual showcase of our on-site civil works, refractory installations, fire protection setups, and mechanical plant projects across the Philippines.</p>
+            <h2 class="section-title" style="color: var(--accent-500);">Completed Projects</h2>
           </div>
 
-          <!-- Interactive Filter Tabs -->
-          <div class="projects-filter-bar">
-            <button type="button" class="project-filter-btn active" data-filter="all">
-              <i class="fas fa-layer-group"></i> All Projects <span class="count-badge">10</span>
-            </button>
-            <button type="button" class="project-filter-btn" data-filter="civil">
-              <i class="fas fa-helmet-safety"></i> Civil & Structural Works <span class="count-badge">4</span>
-            </button>
-            <button type="button" class="project-filter-btn" data-filter="fire">
-              <i class="fas fa-fire-extinguisher"></i> Fire Protection <span class="count-badge">2</span>
-            </button>
-            <button type="button" class="project-filter-btn" data-filter="refractory">
-              <i class="fas fa-fire"></i> Refractory & Boiler <span class="count-badge">2</span>
-            </button>
-            <button type="button" class="project-filter-btn" data-filter="mechanical">
-              <i class="fas fa-gears"></i> Mechanical & Compliance <span class="count-badge">2</span>
-            </button>
-          </div>
-
-          <!-- 10 Project Showcase Cards Grid -->
-          <div class="projects-grid">
-            <!-- Project 1: Civil Works - Foundation -->
+          <!-- 5 Completed Projects Grid -->
+          <div class="completed-projects-grid">
+            <!-- Project 1: Waterproofing -->
             <div class="project-card animate-on-scroll" 
-                 data-category="civil"
-                 data-category-name="Civil & Structural Works"
-                 data-title="Heavy Machinery Foundation & Equipment Pad"
-                 data-client="Batangas Packaging Facility"
-                 data-type="Civil Works & Heavy Concrete"
-                 data-scope="Engineered reinforced rebar cage construction, high-strength concrete batching, vibration isolation joints, and laser-guided leveling for industrial plant machinery."
-                 data-img="assets/images/projects/project-01-machinery-foundation.jpg">
+                 data-title="Waterproofing"
+                 data-img="assets/images/projects/Waterproofing.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 01</span>
-                <span class="project-category-badge badge-civil"><i class="fas fa-helmet-safety"></i> Civil Works</span>
-                <img src="assets/images/projects/project-01-machinery-foundation.jpg" alt="Heavy Machinery Foundation & Equipment Pad" loading="lazy">
+                <img src="assets/images/projects/Waterproofing.jpg" alt="Waterproofing" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Batangas • Packaging Complex</div>
-                <h4 class="project-title">Heavy Machinery Foundation & Equipment Pad</h4>
-                <p class="project-scope-desc">Deep rebar reinforcement, precision concrete pouring, vibration dampening, and laser leveling for manufacturing equipment.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Waterproofing</h4>
               </div>
             </div>
 
-            <!-- Project 2: Fire Systems - Fire Pump -->
+            <!-- Project 2: Construction of Pantry -->
             <div class="project-card animate-on-scroll delay-1" 
-                 data-category="fire"
-                 data-category-name="Fire Protection Systems"
-                 data-title="Industrial Fire Pump Skid & Suppression Header"
-                 data-client="Laguna Technopark Manufacturing"
-                 data-type="Fire Suppression Engineering"
-                 data-scope="Turnkey installation of UL/FM certified diesel fire pump, automated safety controller panel, alarm check valves, and high-pressure suction and discharge piping header."
-                 data-img="assets/images/projects/project-02-fire-pump-skid.jpg">
+                 data-title="Construction of Pantry"
+                 data-img="assets/images/projects/Construction of Pantry.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 02</span>
-                <span class="project-category-badge badge-fire"><i class="fas fa-fire-extinguisher"></i> Fire Systems</span>
-                <img src="assets/images/projects/project-02-fire-pump-skid.jpg" alt="Industrial Fire Pump Skid & Suppression Header" loading="lazy">
+                <img src="assets/images/projects/Construction of Pantry.jpg" alt="Construction of Pantry" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Laguna • Food & Beverage Facility</div>
-                <h4 class="project-title">Industrial Fire Pump Skid & Suppression Header</h4>
-                <p class="project-scope-desc">Turnkey installation of UL/FM fire pump, diesel motor skid, automated controller, and high-pressure header lines.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Construction of Pantry</h4>
               </div>
             </div>
 
-            <!-- Project 3: Refractory - Furnace Lining -->
+            <!-- Project 3: Installation of Canopy -->
             <div class="project-card animate-on-scroll delay-2" 
-                 data-category="refractory"
-                 data-category-name="Refractory & Furnace Lining"
-                 data-title="Boiler Furnace High-Heat Refractory Lining"
-                 data-client="Pampanga Fermentation & Brewery"
-                 data-type="Refractory Relining & Thermal Insulation"
-                 data-scope="Complete boiler firebox relining with high-alumina dense firebricks, refractory mortar bonding, thermal ceramic backing, and castable burner throat replacement."
-                 data-img="assets/images/projects/project-03-refractory-furnace.jpg">
+                 data-title="Installation of Canopy"
+                 data-img="assets/images/projects/Installation of Canopy.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 03</span>
-                <span class="project-category-badge badge-refractory"><i class="fas fa-fire"></i> Refractory</span>
-                <img src="assets/images/projects/project-03-refractory-furnace.jpg" alt="Boiler Furnace High-Heat Refractory Lining" loading="lazy">
+                <img src="assets/images/projects/Installation of Canopy.jpg" alt="Installation of Canopy" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Pampanga • Industrial Brewery</div>
-                <h4 class="project-title">Boiler Furnace High-Heat Refractory Lining</h4>
-                <p class="project-scope-desc">Complete firebox refractory relining with high-alumina firebricks and castable burner throat replacement.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Installation of Canopy</h4>
               </div>
             </div>
 
-            <!-- Project 4: Civil Works - Structural Steel -->
-            <div class="project-card animate-on-scroll" 
-                 data-category="civil"
-                 data-category-name="Civil & Structural Works"
-                 data-title="Warehouse Structural Steel Framing & Retrofit"
-                 data-client="Cavite Logistics & Manufacturing Hub"
-                 data-type="Structural Steel & Civil Engineering"
-                 data-scope="Heavy I-beam steel framework erection, roof truss reinforcement, seismic retrofitting, overhead crane runway alignment, and high-tensile connection bolting."
-                 data-img="assets/images/projects/project-04-structural-framing.jpg">
-              <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 04</span>
-                <span class="project-category-badge badge-civil"><i class="fas fa-helmet-safety"></i> Civil Works</span>
-                <img src="assets/images/projects/project-04-structural-framing.jpg" alt="Warehouse Structural Steel Framing & Retrofit" loading="lazy">
-                <div class="project-card-overlay">
-                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
-                </div>
-              </div>
-              <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Cavite • Industrial Logistics Center</div>
-                <h4 class="project-title">Warehouse Structural Steel Framing & Retrofit</h4>
-                <p class="project-scope-desc">Heavy steel I-beam erection, roof truss reinforcement, seismic retrofitting, and crane girder alignment.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 5: Fire Systems - Sprinkler Network -->
+            <!-- Project 4: Installation of H-Beam with Hoist -->
             <div class="project-card animate-on-scroll delay-1" 
-                 data-category="fire"
-                 data-category-name="Fire Protection Systems"
-                 data-title="High-Bay Warehouse Sprinkler System"
-                 data-client="Bulacan Distribution Center"
-                 data-type="Fire Suppression & Life Safety"
-                 data-scope="Elevated installation of Schedule 40 fire piping, grooved mechanical couplings, quick-response sprinkler heads, and branch line hangers across a 15,000 sqm warehouse."
-                 data-img="assets/images/projects/project-05-sprinkler-installation.jpg">
+                 data-title="Installation of H-Beam with Hoist"
+                 data-img="assets/images/projects/Installation of H-Beam with Hoist.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 05</span>
-                <span class="project-category-badge badge-fire"><i class="fas fa-fire-extinguisher"></i> Fire Systems</span>
-                <img src="assets/images/projects/project-05-sprinkler-installation.jpg" alt="High-Bay Warehouse Sprinkler System" loading="lazy">
+                <img src="assets/images/projects/Installation of H-Beam with Hoist.jpg" alt="Installation of H-Beam with Hoist" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Bulacan • FMCG Logistics Hub</div>
-                <h4 class="project-title">High-Bay Warehouse Sprinkler System</h4>
-                <p class="project-scope-desc">High-elevation Schedule 40 fire piping network, rapid-response sprinkler heads, and alarm check assemblies.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Installation of H-Beam with Hoist</h4>
               </div>
             </div>
 
-            <!-- Project 6: Refractory - Monolithic Castable -->
+            <!-- Project 5: Fabrication of Fence -->
             <div class="project-card animate-on-scroll delay-2" 
-                 data-category="refractory"
-                 data-category-name="Refractory & Furnace Lining"
-                 data-title="Monolithic Castable Refractory Application"
-                 data-client="Batangas Milling & Sugar Operations"
-                 data-type="Castable Refractory & Heat Containment"
-                 data-scope="High-temperature castable refractory installation with stainless steel anchor grid for boiler baffle walls and flue gas ducts, preventing heat loss and casing degradation."
-                 data-img="assets/images/projects/project-06-castable-refractory.jpg">
+                 data-title="Fabrication of Fence"
+                 data-img="assets/images/projects/Fabrication of Fence.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 06</span>
-                <span class="project-category-badge badge-refractory"><i class="fas fa-fire"></i> Refractory</span>
-                <img src="assets/images/projects/project-06-castable-refractory.jpg" alt="Monolithic Castable Refractory Application" loading="lazy">
+                <img src="assets/images/projects/Fabrication of Fence.jpg" alt="Fabrication of Fence" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Batangas • Sugar & Milling Plant</div>
-                <h4 class="project-title">Monolithic Castable Refractory Application</h4>
-                <p class="project-scope-desc">Monolithic castable refractory pouring with stainless anchor grid for boiler baffle walls and flue gas ducts.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Fabrication of Fence</h4>
               </div>
             </div>
 
-            <!-- Project 7: Civil Works - Chemical Bund Slab -->
+            <!-- Project 6: Construction of Laboratory -->
             <div class="project-card animate-on-scroll" 
-                 data-category="civil"
-                 data-category-name="Civil & Structural Works"
-                 data-title="Chemical Storage Containment Bund & Heavy Slab"
-                 data-client="Laguna Industrial Chemical Facility"
-                 data-type="Civil Concrete & Environmental Containment"
-                 data-scope="Engineered concrete secondary containment bund wall construction, chemical-resistant epoxy coating, and acid-proof drainage containment channels."
-                 data-img="assets/images/projects/project-07-chemical-bund-slab.jpg">
+                 data-title="Construction of Laboratory"
+                 data-img="assets/images/projects/Construction of Laboratory.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 07</span>
-                <span class="project-category-badge badge-civil"><i class="fas fa-helmet-safety"></i> Civil Works</span>
-                <img src="assets/images/projects/project-07-chemical-bund-slab.jpg" alt="Chemical Storage Containment Bund & Heavy Slab" loading="lazy">
+                <img src="assets/images/projects/Construction of Laboratory.jpg" alt="Construction of Laboratory" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Laguna • Chemical Processing Plant</div>
-                <h4 class="project-title">Chemical Storage Containment Bund & Heavy Slab</h4>
-                <p class="project-scope-desc">Secondary containment bund wall civil works, chemical-resistant coating, and acid-proof drainage channels.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Construction of Laboratory</h4>
               </div>
             </div>
 
-            <!-- Project 8: Mechanical - Process Piping -->
+            <!-- Project 7: Construction of Silo Foundation -->
             <div class="project-card animate-on-scroll delay-1" 
-                 data-category="mechanical"
-                 data-category-name="Mechanical & Piping"
-                 data-title="Industrial Process Piping & Valve Assembly"
-                 data-client="Cebu Bottling & Packaging Complex"
-                 data-type="Mechanical Engineering & Process Piping"
-                 data-scope="Sanitary and carbon steel process piping lines, flanged gate, ball and butterfly valves, pressure relief manifolds, and full hydrostatic pressure testing."
-                 data-img="assets/images/projects/project-08-process-piping.jpg">
+                 data-title="Construction of Silo Foundation"
+                 data-img="assets/images/projects/Construction of Silo Foundation.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 08</span>
-                <span class="project-category-badge badge-mechanical"><i class="fas fa-gears"></i> Mechanical</span>
-                <img src="assets/images/projects/project-08-process-piping.jpg" alt="Industrial Process Piping & Valve Assembly" loading="lazy">
+                <img src="assets/images/projects/Construction of Silo Foundation.jpg" alt="Construction of Silo Foundation" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Cebu • Beverage Bottling Facility</div>
-                <h4 class="project-title">Industrial Process Piping & Valve Assembly</h4>
-                <p class="project-scope-desc">Sanitary process piping lines, flanged valve manifolds, pressure relief bypass, and full hydro-testing.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Construction of Silo Foundation</h4>
               </div>
             </div>
 
-            <!-- Project 9: Mechanical & Compliance - Boiler Testing -->
+            <!-- Project 8: Repair of Roofing -->
             <div class="project-card animate-on-scroll delay-2" 
-                 data-category="mechanical"
-                 data-category-name="Mechanical & Compliance"
-                 data-title="Boiler Emission Testing & PTO Safety Certification"
-                 data-client="Rizal Textile & Commercial Complex"
-                 data-type="Regulatory Compliance & Testing"
-                 data-scope="Certified DENR stack emission sampling, boiler combustion efficiency audit, and DOLE mechanical Permit-to-Operate (PTO) documentation and safety inspection approval."
-                 data-img="assets/images/projects/project-09-boiler-testing.jpg">
+                 data-title="Repair of Roofing"
+                 data-img="assets/images/projects/Repair of Roofing.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 09</span>
-                <span class="project-category-badge badge-mechanical"><i class="fas fa-gears"></i> Compliance</span>
-                <img src="assets/images/projects/project-09-boiler-testing.jpg" alt="Boiler Emission Testing & PTO Safety Certification" loading="lazy">
+                <img src="assets/images/projects/Repair of Roofing.jpg" alt="Repair of Roofing" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Rizal • Manufacturing Plant</div>
-                <h4 class="project-title">Boiler Emission Testing & PTO Certification</h4>
-                <p class="project-scope-desc">Certified DENR stack emission sampling, combustion audit, and DOLE mechanical Permit-to-Operate facilitation.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
-                </div>
+                <h4 class="project-title">Repair of Roofing</h4>
               </div>
             </div>
 
-            <!-- Project 10: Civil Works - Tank Rehab -->
-            <div class="project-card animate-on-scroll" 
-                 data-category="civil"
-                 data-category-name="Civil & Structural Works"
-                 data-title="Storage Tank Foundation & Civil Rehabilitation"
-                 data-client="Bataan Petrochemical Facility"
-                 data-type="Foundation Restoration & Concrete Civil Works"
-                 data-scope="Concrete ring beam foundation rehabilitation, non-shrink structural grouting, soil stabilization, and reinforced perimeter slab restoration for heavy industrial bulk tanks."
-                 data-img="assets/images/projects/project-10-industrial-tank-rehab.jpg">
+            <!-- Project 9: Rehabilitation of Canteen -->
+            <div class="project-card animate-on-scroll delay-1" 
+                 data-title="Rehabilitation of Canteen"
+                 data-img="assets/images/projects/Rehabilitation of Canteen.jpg">
               <div class="project-img-wrapper">
-                <span class="project-num-badge">PROJECT 10</span>
-                <span class="project-category-badge badge-civil"><i class="fas fa-helmet-safety"></i> Civil Works</span>
-                <img src="assets/images/projects/project-10-industrial-tank-rehab.jpg" alt="Storage Tank Foundation & Civil Rehabilitation" loading="lazy">
+                <img src="assets/images/projects/Rehabilitation of Canteen.jpg" alt="Rehabilitation of Canteen" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <div class="project-client-line"><i class="fas fa-location-dot"></i> Bataan • Petrochemical Storage</div>
-                <h4 class="project-title">Storage Tank Foundation & Civil Rehabilitation</h4>
-                <p class="project-scope-desc">Ring-beam concrete foundation rehabilitation, non-shrink grouting, and perimeter containment slab restoration.</p>
-                <div class="project-footer">
-                  <span class="project-zoom-btn-label"><i class="fas fa-magnifying-glass-plus"></i> Zoom Photo</span>
+                <h4 class="project-title">Rehabilitation of Canteen</h4>
+              </div>
+            </div>
+
+            <!-- Project 10: Provision of Stairs -->
+            <div class="project-card animate-on-scroll" 
+                 data-title="Provision of Stairs"
+                 data-img="assets/images/projects/Provision of Stairs.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Provision of Stairs.jpg" alt="Provision of Stairs" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Provision of Stairs</h4>
+              </div>
+            </div>
+
+            <!-- Project 11: Office Construction -->
+            <div class="project-card animate-on-scroll delay-1" 
+                 data-title="Office Construction"
+                 data-img="assets/images/projects/Office Construction.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Office Construction.jpg" alt="Office Construction" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Office Construction</h4>
+              </div>
+            </div>
+
+            <!-- Project 12: Facilitation of OBO Inspection -->
+            <div class="project-card animate-on-scroll delay-2" 
+                 data-title="Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System"
+                 data-img="assets/images/projects/Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System.jpg" alt="Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System</h4>
+              </div>
+            </div>
+
+            <!-- Project 13: MRF Construction -->
+            <div class="project-card animate-on-scroll" 
+                 data-title="MRF Construction"
+                 data-img="assets/images/projects/MRF Construction.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/MRF Construction.jpg" alt="MRF Construction" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">MRF Construction</h4>
+              </div>
+            </div>
+
+            <!-- Project 14: Installation of Chilled Water Line -->
+            <div class="project-card animate-on-scroll delay-1" 
+                 data-title="Installation of Chilled Water Line"
+                 data-img="assets/images/projects/Installation of Chilled Water Line.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Installation of Chilled Water Line.jpg" alt="Installation of Chilled Water Line" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Installation of Chilled Water Line</h4>
+              </div>
+            </div>
+
+            <!-- Project 15: Fabrication of Water Tank -->
+            <div class="project-card animate-on-scroll" 
+                 data-title="Fabrication of Water Tank"
+                 data-img="assets/images/projects/Fabrication of Water Tank.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Fabrication of Water Tank.jpg" alt="Fabrication of Water Tank" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Fabrication of Water Tank</h4>
+              </div>
+            </div>
+
+            <!-- Project 16: Fabrication of SS Water Strainer -->
+            <div class="project-card animate-on-scroll delay-1" 
+                 data-title="Fabrication of SS Water Strainer"
+                 data-img="assets/images/projects/Fabrication of SS Water Strainer.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Fabrication of SS Water Strainer.jpg" alt="Fabrication of SS Water Strainer" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Fabrication of SS Water Strainer</h4>
+              </div>
+            </div>
+
+            <!-- Project 17: Electrical Load Transfer -->
+            <div class="project-card animate-on-scroll delay-2" 
+                 data-title="Electrical Load Transfer"
+                 data-img="assets/images/projects/Electrical Load Transfer.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Electrical Load Transfer.jpg" alt="Electrical Load Transfer" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Electrical Load Transfer</h4>
+              </div>
+            </div>
+
+            <!-- Project 18: Construction of Underground Gutter -->
+            <div class="project-card animate-on-scroll" 
+                 data-title="Construction of Underground Gutter"
+                 data-img="assets/images/projects/Construction of Underground Gutter.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Construction of Underground Gutter.jpg" alt="Construction of Underground Gutter" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Construction of Underground Gutter</h4>
+              </div>
+            </div>
+
+            <!-- Project 19: Construction of Safety Office -->
+            <div class="project-card animate-on-scroll delay-1" 
+                 data-title="Construction of Safety Office"
+                 data-img="assets/images/projects/Construction of Safety Office.jpg">
+              <div class="project-img-wrapper">
+                <img src="assets/images/projects/Construction of Safety Office.jpg" alt="Construction of Safety Office" loading="lazy">
+                <div class="project-card-overlay">
+                  <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="project-body">
+                <h4 class="project-title">Construction of Safety Office</h4>
               </div>
             </div>
           </div>
@@ -622,8 +1051,7 @@
     <section class="section clients-section" id="clients">
       <div class="container">
         <div class="section-header center">
-          <span class="section-label">Trusted Partners</span>
-          <h2 class="section-title">Our Major Clients</h2>
+          <h2 class="section-title" style="color: var(--accent-500);">Our Clients</h2>
           <p class="section-subtitle">Proudly supporting the operations and facilities of premier enterprises and
             manufacturers across the country.</p>
         </div>
@@ -653,6 +1081,21 @@
           <div class="client-logo-card animate-on-scroll delay-3">
             <img src="assets/images/clients/kerry.png" alt="Kerry">
           </div>
+          <div class="client-logo-card animate-on-scroll">
+            <img src="assets/images/clients/regent.jpg" alt="Regent">
+          </div>
+          <div class="client-logo-card animate-on-scroll delay-1">
+            <img src="assets/images/clients/pascual.jpg" alt="Pascual">
+          </div>
+          <div class="client-logo-card animate-on-scroll delay-2">
+            <img src="assets/images/clients/premium-feeds.png" alt="Premium Feeds">
+          </div>
+          <div class="client-logo-card animate-on-scroll delay-3">
+            <img src="assets/images/clients/standard-corrugated-box.jpg" alt="Standard Corrugated Box, Inc.">
+          </div>
+          <div class="client-logo-card animate-on-scroll">
+            <img src="assets/images/clients/fuji-electric.jpg" alt="Fuji Electric">
+          </div>
         </div>
       </div>
     </section>
@@ -661,8 +1104,7 @@
     <section class="section contact-section" id="contact">
       <div class="container">
         <div class="section-header center">
-          <span class="section-label">Connect With Us</span>
-          <h2 class="section-title">Contact Us</h2>
+          <h2 class="section-title" style="color: var(--accent-500);">Contact Us</h2>
           <p class="section-subtitle">Reach out directly via our landline numbers or email addresses for inquiries,
             product specifications, and project quotations.</p>
         </div>
@@ -749,10 +1191,9 @@
     <div class="container">
       <div class="footer-simple-content">
         <div class="footer-brand-block">
-          <div class="footer-logo-text">
-            <span class="brand-name">DREM</span>
-            <span class="brand-tagline">Industrial Sales, Inc.</span>
-          </div>
+          <a href="#about" aria-label="DREM Industrial Sales, Inc.">
+            <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="footer-logo-img">
+          </a>
           <p>Your trusted partner for quality industrial products, maintenance chemicals, refractories, firefighting
             systems, civil works, and regulatory compliance across the Philippines.</p>
         </div>
@@ -763,7 +1204,7 @@
             <li><a href="#about">Our Company</a></li>
             <li><a href="#products">Our Products</a></li>
             <li><a href="#services">Our Services</a></li>
-            <li><a href="#clients">Our Major Clients</a></li>
+            <li><a href="#clients">Our Clients</a></li>
             <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
