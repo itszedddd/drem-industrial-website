@@ -47,25 +47,118 @@
       line-height: 1.65;
     }
 
-    /* Our Company: Overview Paragraph Spacing & Typography */
-    .about-overview-card {
-      padding: 36px 40px !important;
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      border: 1px solid var(--neutral-200);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-      margin-bottom: 32px;
+    /* Banner after Our Company Styling (White Card Theme) */
+    .about-section .anniversary-banner-card {
+      background: #ffffff !important;
+      border: 1px solid var(--neutral-200) !important;
+      border-radius: var(--radius-lg) !important;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04) !important;
+      margin-bottom: 40px;
+      padding: 44px 48px !important;
+      position: relative;
     }
 
-    .about-overview-card p.lead-paragraph {
+    .about-section .anniversary-banner-card::before,
+    .about-section .anniversary-banner-card::after {
+      display: none !important;
+    }
+
+    .anniversary-content {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .anniversary-badge-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .anniversary-logo-wrap {
+      width: auto !important;
+      height: auto !important;
+      border-radius: 0 !important;
+      padding: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      transition: transform var(--transition-fast);
+    }
+
+    .anniversary-logo-wrap:hover {
+      transform: translateY(-2px);
+    }
+
+    .anniversary-logo-img {
+      height: 88px !important;
+      width: auto !important;
+      max-width: 280px !important;
+      border-radius: 0 !important;
+      object-fit: contain !important;
+      background: transparent !important;
+      display: block !important;
+    }
+
+    .anniversary-pill {
+      background: rgba(245, 153, 59, 0.1) !important;
+      border: 1px solid rgba(245, 153, 59, 0.35) !important;
+      color: var(--accent-600) !important;
+      font-weight: 700 !important;
+      padding: 8px 16px !important;
+      font-size: 0.85rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    .anniversary-title {
+      font-family: var(--font-display) !important;
+      font-size: clamp(1.65rem, 2.5vw, 2.15rem) !important;
+      font-weight: 800 !important;
+      color: var(--neutral-900) !important;
+      line-height: 1.3 !important;
+      margin: 0 !important;
+    }
+
+    .anniversary-title span {
+      color: var(--accent-500) !important;
+      background: linear-gradient(135deg, #e87d1e 0%, #f5993b 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .anniversary-desc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-top: 1px solid var(--neutral-200);
+      padding-top: 22px;
+    }
+
+    .anniversary-desc-list p {
       font-size: 1.02rem !important;
       line-height: 1.8 !important;
       color: var(--neutral-700) !important;
-      margin-bottom: 18px !important;
+      margin: 0 !important;
     }
 
-    .about-overview-card p.lead-paragraph:last-child {
-      margin-bottom: 0 !important;
+    @media (max-width: 768px) {
+      .about-section .anniversary-banner-card {
+        padding: 28px 20px !important;
+      }
+      .anniversary-logo-img {
+        height: 68px !important;
+        max-width: 220px !important;
+      }
+      .anniversary-badge-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
     }
 
     .mv-card h3 {
@@ -448,17 +541,34 @@
           <h1 class="section-title" style="color: var(--accent-500);">Our Company</h1>
         </div>
 
-        <!-- Company Overview -->
-        <div class="about-overview-card animate-on-scroll">
-          <p class="lead-paragraph">
-            Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading, architectural design, and construction / civil, mechanical, and electrical works.
-          </p>
-          <p class="lead-paragraph">
-            It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a corporation on May 30, 1991.
-          </p>
-          <p class="lead-paragraph">
-            Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality products and services, building lasting client relationships through trust, reliability, and exceptional customer support, and nurturing teamwork to foster continuous growth and success of everyone in the company.
-          </p>
+        <!-- ===== 40TH ANNIVERSARY & COMPANY BANNER ===== -->
+        <div class="anniversary-banner-card animate-on-scroll" id="anniversary-banner">
+          <div class="anniversary-content">
+            <div class="anniversary-badge-header">
+              <div class="anniversary-logo-wrap" title="DREM Industrial Sales, Inc. Since 1986">
+                <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="anniversary-logo-img">
+              </div>
+              <div>
+                <div class="anniversary-pill">
+                  <i class="fas fa-award"></i> 40th Anniversary • 1986 – 2026
+                </div>
+              </div>
+            </div>
+
+            <h2 class="anniversary-title">Four Decades of <span>Engineering Trust</span> & Industrial Growth</h2>
+
+            <div class="anniversary-desc-list">
+              <p>
+                Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading, architectural design, and construction / civil, mechanical, and electrical works.
+              </p>
+              <p>
+                It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a corporation on May 30, 1991.
+              </p>
+              <p>
+                Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality products and services, building lasting client relationships through trust, reliability, and exceptional customer support, and nurturing teamwork to foster continuous growth and success of everyone in the company.
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Mission & Vision -->
@@ -504,44 +614,6 @@
               <div class="value-icon"><i class="fas fa-users"></i></div>
               <h4>Teamwork</h4>
               <p>We are one team. The growth and success of one is the growth and success of all.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 40TH ANNIVERSARY & TEAM CULTURE BANNER ===== -->
-    <section class="anniversary-banner-section" id="anniversary-banner">
-      <div class="container">
-        <div class="anniversary-banner-card animate-on-scroll">
-          <div class="anniversary-banner-grid">
-            <div class="anniversary-left">
-              <div class="anniversary-badge-header">
-                <div class="anniversary-logo-wrap" title="DREM 40th Anniversary Emblem (1986–2026)">
-                  <img src="assets/images/banner/40th-anniversary-logo.jpg" alt="DREM 40th Anniversary Emblem 1986-2026" class="anniversary-logo-img">
-                </div>
-                <div>
-                  <div class="anniversary-pill">
-                    <i class="fas fa-award"></i> 40th Anniversary • 1986 – 2026
-                  </div>
-                </div>
-              </div>
-
-              <h2 class="anniversary-title">Four Decades of <span>Engineering Trust</span> & Industrial Growth</h2>
-
-              <p class="anniversary-desc">
-                Since 1986, DREM Industrial Sales, Inc. has stood alongside the Philippines' top manufacturing, food processing, brewing, and petrochemical plants. Behind every dependable product delivery and turnkey engineering job is our passionate team of engineers, project supervisors, and technical office staff.
-              </p>
-            </div>
-
-            <div class="anniversary-right">
-              <div class="anniversary-image-frame">
-                <img src="assets/images/banner/office-team-working.jpg" alt="DREM Industrial Operations and Engineering Team at Work">
-                <div class="anniversary-floating-tag">
-                  <div class="tag-text">DREM Operations & Engineering Team</div>
-                  <div class="tag-badge">Our People</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
