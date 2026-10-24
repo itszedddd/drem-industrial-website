@@ -12,6 +12,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/banner/building.jpg?v=2026">
+  <link rel="preload" as="image" href="assets/images/banner/lab-work.jpg?v=2026">
+  <link rel="preload" as="image" href="assets/images/banner/office-work-1.jpg?v=2026">
+  <link rel="preload" as="image" href="assets/images/banner/office-work-2.jpg?v=2026">
   <style>
     /* ========================================================
        Executive UI, Typography & Layout Polish for Main Site
@@ -714,38 +718,7 @@
               gap: 6px;
             }
 
-            .indicator-pill {
-              height: 4px;
-              border-radius: 4px;
-              background: rgba(255, 255, 255, 0.35);
-              transition: all 0.3s ease;
-            }
-
-            @keyframes indicatorCycle {
-              0%, 22% {
-                width: 20px;
-                background: var(--accent-400);
-              }
-              25%, 100% {
-                width: 6px;
-                background: rgba(255, 255, 255, 0.35);
-              }
-            }
-
-            .indicator-pill.dot-1 { animation: indicatorCycle 20s infinite 0s; }
-            .indicator-pill.dot-2 { animation: indicatorCycle 20s infinite 5s; }
-            .indicator-pill.dot-3 { animation: indicatorCycle 20s infinite 10s; }
-            .indicator-pill.dot-4 { animation: indicatorCycle 20s infinite 15s; }
-
-            /* Image transitions with smooth Ken Burns zoom & seamless crossfading */
-            @keyframes bannerPhotoCycle {
-              0% { opacity: 0; transform: scale(1.0); }
-              4% { opacity: 1; transform: scale(1.01); }
-              25% { opacity: 1; transform: scale(1.06); }
-              29% { opacity: 0; transform: scale(1.08); }
-              100% { opacity: 0; transform: scale(1.0); }
-            }
-
+            /* Deterministic Smooth Carousel Transitions */
             .banner-gallery-img {
               position: absolute;
               inset: 0;
@@ -753,14 +726,38 @@
               height: 100%;
               object-fit: cover;
               opacity: 0;
-              animation: bannerPhotoCycle 20s infinite;
+              transform: scale(1.0);
+              transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), transform 5s ease-out;
+              z-index: 1;
+              pointer-events: none;
               will-change: opacity, transform;
             }
 
-            .banner-gallery-img.slide-1 { animation-delay: 0s; }
-            .banner-gallery-img.slide-2 { animation-delay: 5s; }
-            .banner-gallery-img.slide-3 { animation-delay: 10s; }
-            .banner-gallery-img.slide-4 { animation-delay: 15s; }
+            .banner-gallery-img.active {
+              opacity: 1 !important;
+              transform: scale(1.05);
+              z-index: 2 !important;
+              pointer-events: auto;
+            }
+
+            /* Clickable indicator pills */
+            .indicator-pill {
+              width: 6px;
+              height: 4px;
+              border-radius: 4px;
+              background: rgba(255, 255, 255, 0.35);
+              transition: all 0.3s ease;
+              cursor: pointer;
+            }
+
+            .indicator-pill:hover {
+              background: rgba(255, 255, 255, 0.7);
+            }
+
+            .indicator-pill.active {
+              width: 22px;
+              background: var(--accent-400) !important;
+            }
 
             @media (max-width: 900px) {
               #anniversary-banner {
@@ -825,27 +822,97 @@
                 <!-- Bottom gradient overlay -->
                 <div class="photo-bottom-gradient"></div>
 
-                <!-- Cycling Photos (Building -> Lab -> Office 1 -> Office 2) -->
-                <img class="banner-gallery-img slide-1" src="assets/images/banner/building.jpg" alt="DREM Industrial Sales Building">
-                <img class="banner-gallery-img slide-2" src="assets/images/banner/lab-work.jpg" alt="Laboratory and quality testing">
-                <img class="banner-gallery-img slide-3" src="assets/images/banner/office-work-1.jpg" alt="Office operations">
-                <img class="banner-gallery-img slide-4" src="assets/images/banner/office-work-2.jpg" alt="Team at work">
+                <!-- Cycling Photos with Cache-Busting Parameters -->
+                <img class="banner-gallery-img active" src="assets/images/banner/building.jpg?v=2026" alt="DREM Industrial Sales Building">
+                <img class="banner-gallery-img" src="assets/images/banner/lab-work.jpg?v=2026" alt="Laboratory and quality testing">
+                <img class="banner-gallery-img" src="assets/images/banner/office-work-1.jpg?v=2026" alt="Office operations">
+                <img class="banner-gallery-img" src="assets/images/banner/office-work-2.jpg?v=2026" alt="Team at work">
 
-                <!-- Bottom caption & animated slide indicators -->
+                <!-- Bottom caption & interactive slide indicators -->
                 <div class="photo-footer-info">
                   <div class="photo-footer-caption">
                     <i class="fas fa-camera"></i> Life at DREM
                   </div>
                   <div class="photo-indicators">
-                    <span class="indicator-pill dot-1"></span>
-                    <span class="indicator-pill dot-2"></span>
-                    <span class="indicator-pill dot-3"></span>
-                    <span class="indicator-pill dot-4"></span>
+                    <span class="indicator-pill active" title="Building"></span>
+                    <span class="indicator-pill" title="Laboratory"></span>
+                    <span class="indicator-pill" title="Office Work 1"></span>
+                    <span class="indicator-pill" title="Office Work 2"></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          
+          <!-- Deterministic Photo Slider Script -->
+          <script>
+            (function() {
+              function initBannerSlider() {
+                var container = document.querySelector('.anniversary-banner-photos');
+                if (!container) return;
+                var slides = container.querySelectorAll('.banner-gallery-img');
+                var dots = container.querySelectorAll('.indicator-pill');
+                if (!slides || slides.length === 0) return;
+
+                var currentIndex = 0;
+                var slideTimer = null;
+
+                function showSlide(index) {
+                  currentIndex = (index + slides.length) % slides.length;
+                  for (var i = 0; i < slides.length; i++) {
+                    if (i === currentIndex) {
+                      slides[i].classList.add('active');
+                    } else {
+                      slides[i].classList.remove('active');
+                    }
+                  }
+                  for (var j = 0; j < dots.length; j++) {
+                    if (j === currentIndex) {
+                      dots[j].classList.add('active');
+                    } else {
+                      dots[j].classList.remove('active');
+                    }
+                  }
+                }
+
+                function nextSlide() {
+                  showSlide(currentIndex + 1);
+                }
+
+                function startAutoPlay() {
+                  stopAutoPlay();
+                  slideTimer = setInterval(nextSlide, 4500);
+                }
+
+                function stopAutoPlay() {
+                  if (slideTimer) {
+                    clearInterval(slideTimer);
+                    slideTimer = null;
+                  }
+                }
+
+                dots.forEach(function(dot, idx) {
+                  dot.addEventListener('click', function() {
+                    showSlide(idx);
+                    startAutoPlay();
+                  });
+                });
+
+                container.addEventListener('mouseenter', stopAutoPlay);
+                container.addEventListener('mouseleave', startAutoPlay);
+
+                // Initial show to ensure active state is synchronized
+                showSlide(0);
+                startAutoPlay();
+              }
+
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initBannerSlider);
+              } else {
+                initBannerSlider();
+              }
+            })();
+          </script>
         </div>
 
         <!-- Mission & Vision -->
