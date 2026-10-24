@@ -541,32 +541,309 @@
           <h1 class="section-title" style="color: var(--accent-500);">Our Company</h1>
         </div>
 
-        <!-- ===== 40TH ANNIVERSARY & COMPANY BANNER ===== -->
         <div class="anniversary-banner-card animate-on-scroll" id="anniversary-banner">
-          <div class="anniversary-content">
-            <div class="anniversary-badge-header">
-              <div class="anniversary-logo-wrap" title="DREM Industrial Sales, Inc. Since 1986">
-                <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="anniversary-logo-img">
-              </div>
-              <div>
-                <div class="anniversary-pill">
-                  <i class="fas fa-award"></i> 40th Anniversary • 1986 – 2026
+          <style>
+            #anniversary-banner {
+              background: linear-gradient(145deg, #ffffff 0%, #fbfdff 55%, #fffcf8 100%) !important;
+              border: 1px solid rgba(226, 232, 240, 0.95) !important;
+              border-top: 4px solid var(--accent-500) !important;
+              border-radius: 20px !important;
+              box-shadow: 0 14px 34px -6px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+              padding: 40px 44px !important;
+              position: relative;
+            }
+
+            .anniversary-banner-layout {
+              display: flex;
+              gap: 40px;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            .anniversary-banner-text {
+              flex: 1 1 58%;
+              display: flex;
+              flex-direction: column;
+              gap: 20px;
+            }
+
+            .anniversary-badge-header {
+              display: flex;
+              align-items: center;
+              gap: 20px;
+            }
+
+            /* Trust feature tags under text */
+            .banner-trust-tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              padding-top: 6px;
+            }
+
+            .trust-tag {
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              background: #ffffff;
+              border: 1px solid var(--neutral-200);
+              padding: 6px 14px;
+              border-radius: 999px;
+              font-size: 0.82rem;
+              font-weight: 600;
+              color: var(--neutral-700);
+              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+              transition: all var(--transition-fast);
+            }
+
+            .trust-tag i {
+              color: var(--accent-500);
+              font-size: 0.85rem;
+            }
+
+            .trust-tag:hover {
+              border-color: var(--accent-400);
+              color: var(--neutral-900);
+              transform: translateY(-1px);
+            }
+
+            /* Right-Side Architectural Showcase */
+            .anniversary-showcase-wrapper {
+              flex: 0 0 310px;
+              position: relative;
+              padding: 10px;
+            }
+
+            /* Subtle decorative backdrop frame */
+            .showcase-backdrop-accent {
+              position: absolute;
+              inset: 0;
+              border-radius: 22px;
+              background: linear-gradient(135deg, rgba(232, 125, 30, 0.12), rgba(21, 101, 160, 0.08));
+              border: 1.5px dashed rgba(232, 125, 30, 0.35);
+              transform: rotate(2deg);
+              pointer-events: none;
+            }
+
+            .anniversary-banner-photos {
+              position: relative;
+              z-index: 2;
+              width: 100%;
+              height: 380px;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.06);
+              border: 4px solid #ffffff;
+              background: var(--neutral-900);
+            }
+
+            /* Dark gradient overlay for bottom legibility */
+            .photo-bottom-gradient {
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(to top, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.25) 35%, transparent 65%);
+              z-index: 3;
+              pointer-events: none;
+            }
+
+            /* Top Floating Glass Pill */
+            .photo-floating-pill {
+              position: absolute;
+              top: 14px;
+              left: 14px;
+              z-index: 4;
+              display: inline-flex;
+              align-items: center;
+              gap: 8px;
+              background: rgba(15, 23, 42, 0.68);
+              backdrop-filter: blur(8px);
+              -webkit-backdrop-filter: blur(8px);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              padding: 5px 12px;
+              border-radius: 20px;
+              color: #ffffff;
+              font-size: 0.74rem;
+              font-weight: 600;
+              letter-spacing: 0.02em;
+            }
+
+            .live-dot {
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              background: #10b981;
+              box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+              animation: dotPulse 2s infinite ease-in-out;
+            }
+
+            @keyframes dotPulse {
+              0%, 100% { transform: scale(1); opacity: 1; }
+              50% { transform: scale(0.8); opacity: 0.5; }
+            }
+
+            /* Bottom Caption & Indicators */
+            .photo-footer-info {
+              position: absolute;
+              bottom: 12px;
+              left: 14px;
+              right: 14px;
+              z-index: 4;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            }
+
+            .photo-footer-caption {
+              color: #ffffff;
+              font-size: 0.8rem;
+              font-weight: 600;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            }
+
+            .photo-footer-caption i {
+              color: var(--accent-400);
+            }
+
+            /* Carousel slide indicators */
+            .photo-indicators {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            }
+
+            .indicator-pill {
+              height: 4px;
+              border-radius: 4px;
+              background: rgba(255, 255, 255, 0.35);
+              transition: all 0.3s ease;
+            }
+
+            @keyframes indicatorCycle {
+              0%, 22% {
+                width: 20px;
+                background: var(--accent-400);
+              }
+              25%, 100% {
+                width: 6px;
+                background: rgba(255, 255, 255, 0.35);
+              }
+            }
+
+            .indicator-pill:nth-child(1) { animation: indicatorCycle 20s infinite 0s; }
+            .indicator-pill:nth-child(2) { animation: indicatorCycle 20s infinite 5s; }
+            .indicator-pill:nth-child(3) { animation: indicatorCycle 20s infinite 10s; }
+            .indicator-pill:nth-child(4) { animation: indicatorCycle 20s infinite 15s; }
+
+            /* Image transitions with subtle Ken Burns zoom */
+            @keyframes bannerPhotoCycle {
+              0% { opacity: 0; transform: scale(1.0); }
+              3% { opacity: 1; transform: scale(1.02); }
+              22% { opacity: 1; transform: scale(1.07); }
+              25% { opacity: 0; transform: scale(1.09); }
+              100% { opacity: 0; transform: scale(1.0); }
+            }
+
+            .banner-gallery-img {
+              position: absolute;
+              inset: 0;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              opacity: 0;
+              animation: bannerPhotoCycle 20s infinite;
+              will-change: opacity, transform;
+            }
+
+            .banner-gallery-img:nth-child(1) { animation-delay: 0s; }
+            .banner-gallery-img:nth-child(2) { animation-delay: 5s; }
+            .banner-gallery-img:nth-child(3) { animation-delay: 10s; }
+            .banner-gallery-img:nth-child(4) { animation-delay: 15s; }
+
+            @media (max-width: 900px) {
+              #anniversary-banner {
+                padding: 30px 22px !important;
+              }
+              .anniversary-banner-layout {
+                flex-direction: column;
+                gap: 28px;
+              }
+              .anniversary-showcase-wrapper {
+                flex: none;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+              }
+              .anniversary-banner-photos {
+                height: 360px;
+              }
+            }
+          </style>
+
+          <div class="anniversary-banner-layout">
+            <div class="anniversary-banner-text">
+              <div class="anniversary-badge-header">
+                <div class="anniversary-logo-wrap" title="DREM Industrial Sales, Inc. Since 1986">
+                  <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="anniversary-logo-img">
                 </div>
+              </div>
+
+              <h2 class="anniversary-title">Four Decades of <span>Engineering Trust</span> & Industrial Growth</h2>
+
+              <div class="anniversary-desc-list">
+                <p>
+                  Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading, architectural design, and construction / civil, mechanical, and electrical works.
+                </p>
+                <p>
+                  It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a corporation on May 30, 1991.
+                </p>
+                <p>
+                  Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality products and services, building lasting client relationships through trust, reliability, and exceptional customer support, and nurturing teamwork to foster continuous growth and success of everyone in the company.
+                </p>
+              </div>
+
+              <!-- Trust & Capability Badges -->
+              <div class="banner-trust-tags">
+                <span class="trust-tag"><i class="fas fa-industry"></i> Industrial Solutions</span>
+                <span class="trust-tag"><i class="fas fa-certificate"></i> Quality Guaranteed</span>
+                <span class="trust-tag"><i class="fas fa-handshake"></i> Trusted Partnership</span>
               </div>
             </div>
 
-            <h2 class="anniversary-title">Four Decades of <span>Engineering Trust</span> & Industrial Growth</h2>
+            <!-- Architectural Right-Side Photo Showcase -->
+            <div class="anniversary-showcase-wrapper">
+              <div class="showcase-backdrop-accent"></div>
+              <div class="anniversary-banner-photos">
+                <!-- Top floating status badge -->
+                <div class="photo-floating-pill">
+                  <span class="live-dot"></span>
+                  <span>Facilities & Operations</span>
+                </div>
 
-            <div class="anniversary-desc-list">
-              <p>
-                Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading, architectural design, and construction / civil, mechanical, and electrical works.
-              </p>
-              <p>
-                It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a corporation on May 30, 1991.
-              </p>
-              <p>
-                Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality products and services, building lasting client relationships through trust, reliability, and exceptional customer support, and nurturing teamwork to foster continuous growth and success of everyone in the company.
-              </p>
+                <!-- Bottom gradient overlay -->
+                <div class="photo-bottom-gradient"></div>
+
+                <!-- Cycling Photos -->
+                <img class="banner-gallery-img" src="assets/images/banner/building.jpg" alt="DREM Industrial Sales Building">
+                <img class="banner-gallery-img" src="assets/images/banner/lab-work.jpg" alt="Laboratory and quality testing">
+                <img class="banner-gallery-img" src="assets/images/banner/office-work-1.jpg" alt="Office operations">
+                <img class="banner-gallery-img" src="assets/images/banner/office-work-2.jpg" alt="Team at work">
+
+                <!-- Bottom caption & animated slide indicators -->
+                <div class="photo-footer-info">
+                  <div class="photo-footer-caption">
+                    <i class="fas fa-camera"></i> Life at DREM
+                  </div>
+                  <div class="photo-indicators">
+                    <span class="indicator-pill"></span>
+                    <span class="indicator-pill"></span>
+                    <span class="indicator-pill"></span>
+                    <span class="indicator-pill"></span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
