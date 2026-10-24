@@ -732,17 +732,17 @@
               }
             }
 
-            .indicator-pill:nth-child(1) { animation: indicatorCycle 20s infinite 0s; }
-            .indicator-pill:nth-child(2) { animation: indicatorCycle 20s infinite 5s; }
-            .indicator-pill:nth-child(3) { animation: indicatorCycle 20s infinite 10s; }
-            .indicator-pill:nth-child(4) { animation: indicatorCycle 20s infinite 15s; }
+            .indicator-pill.dot-1 { animation: indicatorCycle 20s infinite 0s; }
+            .indicator-pill.dot-2 { animation: indicatorCycle 20s infinite 5s; }
+            .indicator-pill.dot-3 { animation: indicatorCycle 20s infinite 10s; }
+            .indicator-pill.dot-4 { animation: indicatorCycle 20s infinite 15s; }
 
-            /* Image transitions with subtle Ken Burns zoom */
+            /* Image transitions with smooth Ken Burns zoom & seamless crossfading */
             @keyframes bannerPhotoCycle {
               0% { opacity: 0; transform: scale(1.0); }
-              3% { opacity: 1; transform: scale(1.02); }
-              22% { opacity: 1; transform: scale(1.07); }
-              25% { opacity: 0; transform: scale(1.09); }
+              4% { opacity: 1; transform: scale(1.01); }
+              25% { opacity: 1; transform: scale(1.06); }
+              29% { opacity: 0; transform: scale(1.08); }
               100% { opacity: 0; transform: scale(1.0); }
             }
 
@@ -757,10 +757,10 @@
               will-change: opacity, transform;
             }
 
-            .banner-gallery-img:nth-child(1) { animation-delay: 0s; }
-            .banner-gallery-img:nth-child(2) { animation-delay: 5s; }
-            .banner-gallery-img:nth-child(3) { animation-delay: 10s; }
-            .banner-gallery-img:nth-child(4) { animation-delay: 15s; }
+            .banner-gallery-img.slide-1 { animation-delay: 0s; }
+            .banner-gallery-img.slide-2 { animation-delay: 5s; }
+            .banner-gallery-img.slide-3 { animation-delay: 10s; }
+            .banner-gallery-img.slide-4 { animation-delay: 15s; }
 
             @media (max-width: 900px) {
               #anniversary-banner {
@@ -825,11 +825,11 @@
                 <!-- Bottom gradient overlay -->
                 <div class="photo-bottom-gradient"></div>
 
-                <!-- Cycling Photos -->
-                <img class="banner-gallery-img" src="assets/images/banner/building.jpg" alt="DREM Industrial Sales Building">
-                <img class="banner-gallery-img" src="assets/images/banner/lab-work.jpg" alt="Laboratory and quality testing">
-                <img class="banner-gallery-img" src="assets/images/banner/office-work-1.jpg" alt="Office operations">
-                <img class="banner-gallery-img" src="assets/images/banner/office-work-2.jpg" alt="Team at work">
+                <!-- Cycling Photos (Building -> Lab -> Office 1 -> Office 2) -->
+                <img class="banner-gallery-img slide-1" src="assets/images/banner/building.jpg" alt="DREM Industrial Sales Building">
+                <img class="banner-gallery-img slide-2" src="assets/images/banner/lab-work.jpg" alt="Laboratory and quality testing">
+                <img class="banner-gallery-img slide-3" src="assets/images/banner/office-work-1.jpg" alt="Office operations">
+                <img class="banner-gallery-img slide-4" src="assets/images/banner/office-work-2.jpg" alt="Team at work">
 
                 <!-- Bottom caption & animated slide indicators -->
                 <div class="photo-footer-info">
@@ -837,10 +837,10 @@
                     <i class="fas fa-camera"></i> Life at DREM
                   </div>
                   <div class="photo-indicators">
-                    <span class="indicator-pill"></span>
-                    <span class="indicator-pill"></span>
-                    <span class="indicator-pill"></span>
-                    <span class="indicator-pill"></span>
+                    <span class="indicator-pill dot-1"></span>
+                    <span class="indicator-pill dot-2"></span>
+                    <span class="indicator-pill dot-3"></span>
+                    <span class="indicator-pill dot-4"></span>
                   </div>
                 </div>
               </div>
