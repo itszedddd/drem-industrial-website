@@ -2771,6 +2771,24 @@ h6 {
   max-height: 46px;
 }
 
+.client-logo-card img[src*="standard-corrugated-box"] {
+  max-height: 72px;
+  max-width: 175px;
+}
+
+.client-logo-card img[src*="constant"] {
+  max-height: 44px;
+  max-width: 190px;
+}
+
+.client-logo-card img[src*="pbi"] {
+  max-height: 64px;
+}
+
+.client-logo-card img[src*="vpcc"] {
+  max-height: 62px;
+}
+
 .client-logo-card .client-title {
   margin-top: 10px;
   font-size: 0.85rem;
