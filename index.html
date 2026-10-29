@@ -153,10 +153,12 @@
       .about-section .anniversary-banner-card {
         padding: 28px 20px !important;
       }
+
       .anniversary-logo-img {
         height: 68px !important;
         max-width: 220px !important;
       }
+
       .anniversary-badge-header {
         flex-direction: column;
         align-items: flex-start;
@@ -338,6 +340,7 @@
     }
 
     @media (max-width: 768px) {
+
       .simple-products-grid,
       .simple-services-grid,
       .civil-works-columns {
@@ -680,8 +683,17 @@
             }
 
             @keyframes dotPulse {
-              0%, 100% { transform: scale(1); opacity: 1; }
-              50% { transform: scale(0.8); opacity: 0.5; }
+
+              0%,
+              100% {
+                transform: scale(1);
+                opacity: 1;
+              }
+
+              50% {
+                transform: scale(0.8);
+                opacity: 0.5;
+              }
             }
 
             /* Bottom Caption & Indicators */
@@ -763,16 +775,19 @@
               #anniversary-banner {
                 padding: 30px 22px !important;
               }
+
               .anniversary-banner-layout {
                 flex-direction: column;
                 gap: 28px;
               }
+
               .anniversary-showcase-wrapper {
                 flex: none;
                 width: 100%;
                 max-width: 320px;
                 margin: 0 auto;
               }
+
               .anniversary-banner-photos {
                 height: 360px;
               }
@@ -783,21 +798,27 @@
             <div class="anniversary-banner-text">
               <div class="anniversary-badge-header">
                 <div class="anniversary-logo-wrap" title="DREM Industrial Sales, Inc. Since 1986">
-                  <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="anniversary-logo-img">
+                  <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986"
+                    class="anniversary-logo-img">
                 </div>
               </div>
 
-              <h2 class="anniversary-title">Four Decades of <span>Engineering Trust</span> & Industrial Growth</h2>
+              <h2 class="anniversary-title">Four Decades of <span>Engineering Trust</span> & Industrial Solutions</h2>
 
               <div class="anniversary-desc-list">
                 <p>
-                  Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading, architectural design, and construction / civil, mechanical, and electrical works.
+                  Drem Industrial Sales, Inc. is a Filipino-owned family corporation engaged in the business of trading,
+                  architectural design, and construction / civil, mechanical, and electrical works.
                 </p>
                 <p>
-                  It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a corporation on May 30, 1991.
+                  It was established in August 1986 as a single proprietorship by Engr. Deo Alcala and was formed into a
+                  corporation on May 30, 1991.
                 </p>
                 <p>
-                  Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality products and services, building lasting client relationships through trust, reliability, and exceptional customer support, and nurturing teamwork to foster continuous growth and success of everyone in the company.
+                  Celebrating its 40th anniversary in 2026, the company remains true to its goals of delivering quality
+                  products and services, building lasting client relationships through trust, reliability, and
+                  exceptional customer support, and nurturing teamwork to foster continuous growth and success of
+                  everyone in the company.
                 </p>
               </div>
 
@@ -823,15 +844,19 @@
                 <div class="photo-bottom-gradient"></div>
 
                 <!-- Cycling Photos -->
-                <img class="banner-gallery-img active" src="assets/images/banner/building.jpg" alt="DREM Industrial Sales Building" loading="eager" decoding="sync">
-                <img class="banner-gallery-img" src="assets/images/banner/office-work-1.jpg" alt="Office operations" loading="eager" decoding="sync">
-                <img class="banner-gallery-img" src="assets/images/banner/lab-work.jpg" alt="Laboratory and quality testing" loading="eager" decoding="sync">
-                <img class="banner-gallery-img" src="assets/images/banner/office-work-2.jpg" alt="Team at work" loading="eager" decoding="sync">
+                <img class="banner-gallery-img active" src="assets/images/banner/building.jpg"
+                  alt="DREM Industrial Sales Building" loading="eager" decoding="sync">
+                <img class="banner-gallery-img" src="assets/images/banner/office-work-1.jpg" alt="Office operations"
+                  loading="eager" decoding="sync">
+                <img class="banner-gallery-img" src="assets/images/banner/lab-work.jpg"
+                  alt="Laboratory and quality testing" loading="eager" decoding="sync">
+                <img class="banner-gallery-img" src="assets/images/banner/office-work-2.jpg" alt="Team at work"
+                  loading="eager" decoding="sync">
 
                 <!-- Bottom caption & interactive slide indicators -->
                 <div class="photo-footer-info">
                   <div class="photo-footer-caption">
-                    <i class="fas fa-camera"></i> Life at DREM
+                    <i class="fas fa-camera"></i> Life at Drem
                   </div>
                   <div class="photo-indicators">
                     <span class="indicator-pill active" title="Building"></span>
@@ -843,10 +868,10 @@
               </div>
             </div>
           </div>
-          
+
           <!-- Deterministic Photo Slider Script -->
           <script>
-            (function() {
+            (function () {
               function initBannerSlider() {
                 var container = document.querySelector('.anniversary-banner-photos');
                 if (!container) return;
@@ -891,8 +916,8 @@
                   }
                 }
 
-                dots.forEach(function(dot, idx) {
-                  dot.addEventListener('click', function() {
+                dots.forEach(function (dot, idx) {
+                  dot.addEventListener('click', function () {
                     showSlide(idx);
                     startAutoPlay();
                   });
@@ -930,7 +955,8 @@
               <i class="fas fa-eye"></i>
             </div>
             <h3>Our Vision</h3>
-            <p>To be the Philippines' top-of-mind and preferred provider of industrial products and of civil, architectural, mechanical, and electrical works.</p>
+            <p>To be the Philippines' top-of-mind and preferred provider of industrial products and of civil,
+              architectural, mechanical, and electrical works.</p>
           </div>
         </div>
 
@@ -1025,28 +1051,25 @@
                 <i class="fas fa-gauge-high"></i>
                 <div>
                   <strong>Pumps</strong>
-                  <p>Certified industrial fire pumps for pressurized suppression water supply.</p>
                 </div>
               </div>
               <div class="sub-product-item">
                 <i class="fas fa-gears"></i>
                 <div>
                   <strong>Motors</strong>
-                  <p>Heavy-duty electric and diesel drivers for fire pump system actuation.</p>
+
                 </div>
               </div>
               <div class="sub-product-item">
                 <i class="fas fa-sliders"></i>
                 <div>
                   <strong>Controls</strong>
-                  <p>Automated fire pump controller panels and safety instrumentation.</p>
                 </div>
               </div>
               <div class="sub-product-item">
                 <i class="fas fa-faucet-drip"></i>
                 <div>
                   <strong>Valves</strong>
-                  <p>Alarm check valves, butterfly valves, OS&Y gates, and pressure regulators.</p>
                 </div>
               </div>
             </div>
@@ -1091,7 +1114,8 @@
               </div>
             </div>
             <ul class="clean-item-list">
-              <li>Descaling of boiler, evaporative condenser, cooling tower, shell and tube condensers, radiator, ammonia compressor, piping, bottle washer, and heat exchanger</li>
+              <li>Descaling of boiler, evaporative condenser, cooling tower, shell and tube condensers, radiator,
+                ammonia compressor, piping, bottle washer, and heat exchanger</li>
             </ul>
           </div>
 
@@ -1105,9 +1129,6 @@
                 <h3>Boiler Repair and Maintenance Services</h3>
               </div>
             </div>
-            <ul class="clean-item-list">
-              <li>Comprehensive inspection, preventive servicing, refractory repairs, and mechanical overhaul of industrial boiler units</li>
-            </ul>
           </div>
 
           <!-- 4. Emission Testing -->
@@ -1120,9 +1141,6 @@
                 <h3>Emission Testing of Boiler, Genset, and Ambient Air</h3>
               </div>
             </div>
-            <ul class="clean-item-list">
-              <li>Accredited stack and ambient air sampling, emissions compliance certification for DOLE and DENR-EMB regulatory standards</li>
-            </ul>
           </div>
 
           <!-- 5. Permit Facilitation -->
@@ -1173,9 +1191,8 @@
           <!-- 5 Completed Projects Grid -->
           <div class="completed-projects-grid">
             <!-- Project 1: Waterproofing -->
-            <div class="project-card animate-on-scroll" 
-                 data-title="Waterproofing"
-                 data-img="assets/images/projects/Waterproofing.jpg">
+            <div class="project-card animate-on-scroll" data-title="Waterproofing"
+              data-img="assets/images/projects/Waterproofing.jpg">
               <div class="project-img-wrapper">
                 <img src="assets/images/projects/Waterproofing.jpg" alt="Waterproofing" loading="lazy">
                 <div class="project-card-overlay">
@@ -1188,11 +1205,11 @@
             </div>
 
             <!-- Project 2: Construction of Pantry -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Construction of Pantry"
-                 data-img="assets/images/projects/Construction of Pantry.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Construction of Pantry"
+              data-img="assets/images/projects/Construction of Pantry.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Construction of Pantry.jpg" alt="Construction of Pantry" loading="lazy">
+                <img src="assets/images/projects/Construction of Pantry.jpg" alt="Construction of Pantry"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1203,11 +1220,11 @@
             </div>
 
             <!-- Project 3: Installation of Canopy -->
-            <div class="project-card animate-on-scroll delay-2" 
-                 data-title="Installation of Canopy"
-                 data-img="assets/images/projects/Installation of Canopy.jpg">
+            <div class="project-card animate-on-scroll delay-2" data-title="Installation of Canopy"
+              data-img="assets/images/projects/Installation of Canopy.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Installation of Canopy.jpg" alt="Installation of Canopy" loading="lazy">
+                <img src="assets/images/projects/Installation of Canopy.jpg" alt="Installation of Canopy"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1218,11 +1235,11 @@
             </div>
 
             <!-- Project 4: Installation of H-Beam with Hoist -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Installation of H-Beam with Hoist"
-                 data-img="assets/images/projects/Installation of H-Beam with Hoist.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Installation of H-Beam with Hoist"
+              data-img="assets/images/projects/Installation of H-Beam with Hoist.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Installation of H-Beam with Hoist.jpg" alt="Installation of H-Beam with Hoist" loading="lazy">
+                <img src="assets/images/projects/Installation of H-Beam with Hoist.jpg"
+                  alt="Installation of H-Beam with Hoist" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1233,9 +1250,8 @@
             </div>
 
             <!-- Project 5: Fabrication of Fence -->
-            <div class="project-card animate-on-scroll delay-2" 
-                 data-title="Fabrication of Fence"
-                 data-img="assets/images/projects/Fabrication of Fence.jpg">
+            <div class="project-card animate-on-scroll delay-2" data-title="Fabrication of Fence"
+              data-img="assets/images/projects/Fabrication of Fence.jpg">
               <div class="project-img-wrapper">
                 <img src="assets/images/projects/Fabrication of Fence.jpg" alt="Fabrication of Fence" loading="lazy">
                 <div class="project-card-overlay">
@@ -1248,11 +1264,11 @@
             </div>
 
             <!-- Project 6: Construction of Laboratory -->
-            <div class="project-card animate-on-scroll" 
-                 data-title="Construction of Laboratory"
-                 data-img="assets/images/projects/Construction of Laboratory.jpg">
+            <div class="project-card animate-on-scroll" data-title="Construction of Laboratory"
+              data-img="assets/images/projects/Construction of Laboratory.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Construction of Laboratory.jpg" alt="Construction of Laboratory" loading="lazy">
+                <img src="assets/images/projects/Construction of Laboratory.jpg" alt="Construction of Laboratory"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1263,11 +1279,11 @@
             </div>
 
             <!-- Project 7: Construction of Silo Foundation -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Construction of Silo Foundation"
-                 data-img="assets/images/projects/Construction of Silo Foundation.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Construction of Silo Foundation"
+              data-img="assets/images/projects/Construction of Silo Foundation.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Construction of Silo Foundation.jpg" alt="Construction of Silo Foundation" loading="lazy">
+                <img src="assets/images/projects/Construction of Silo Foundation.jpg"
+                  alt="Construction of Silo Foundation" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1278,9 +1294,8 @@
             </div>
 
             <!-- Project 8: Repair of Roofing -->
-            <div class="project-card animate-on-scroll delay-2" 
-                 data-title="Repair of Roofing"
-                 data-img="assets/images/projects/Repair of Roofing.jpg">
+            <div class="project-card animate-on-scroll delay-2" data-title="Repair of Roofing"
+              data-img="assets/images/projects/Repair of Roofing.jpg">
               <div class="project-img-wrapper">
                 <img src="assets/images/projects/Repair of Roofing.jpg" alt="Repair of Roofing" loading="lazy">
                 <div class="project-card-overlay">
@@ -1293,11 +1308,11 @@
             </div>
 
             <!-- Project 9: Rehabilitation of Canteen -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Rehabilitation of Canteen"
-                 data-img="assets/images/projects/Rehabilitation of Canteen.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Rehabilitation of Canteen"
+              data-img="assets/images/projects/Rehabilitation of Canteen.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Rehabilitation of Canteen.jpg" alt="Rehabilitation of Canteen" loading="lazy">
+                <img src="assets/images/projects/Rehabilitation of Canteen.jpg" alt="Rehabilitation of Canteen"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1308,9 +1323,8 @@
             </div>
 
             <!-- Project 10: Provision of Stairs -->
-            <div class="project-card animate-on-scroll" 
-                 data-title="Provision of Stairs"
-                 data-img="assets/images/projects/Provision of Stairs.jpg">
+            <div class="project-card animate-on-scroll" data-title="Provision of Stairs"
+              data-img="assets/images/projects/Provision of Stairs.jpg">
               <div class="project-img-wrapper">
                 <img src="assets/images/projects/Provision of Stairs.jpg" alt="Provision of Stairs" loading="lazy">
                 <div class="project-card-overlay">
@@ -1323,9 +1337,8 @@
             </div>
 
             <!-- Project 11: Office Construction -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Office Construction"
-                 data-img="assets/images/projects/Office Construction.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Office Construction"
+              data-img="assets/images/projects/Office Construction.jpg">
               <div class="project-img-wrapper">
                 <img src="assets/images/projects/Office Construction.jpg" alt="Office Construction" loading="lazy">
                 <div class="project-card-overlay">
@@ -1338,24 +1351,27 @@
             </div>
 
             <!-- Project 12: Facilitation of OBO Inspection -->
-            <div class="project-card animate-on-scroll delay-2" 
-                 data-title="Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System"
-                 data-img="assets/images/projects/Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System.jpg">
+            <div class="project-card animate-on-scroll delay-2"
+              data-title="Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System"
+              data-img="assets/images/projects/Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System.jpg" alt="Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System" loading="lazy">
+                <img
+                  src="assets/images/projects/Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System.jpg"
+                  alt="Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
               </div>
               <div class="project-body">
-                <h4 class="project-title">Facilitation of OBO Inspection for Fire Detection and Alarm System and Automatic Fire Suppression System</h4>
+                <h4 class="project-title">Installation Fire Detection and Alarm System and Automatic Fire Suppression
+                  System</h4>
               </div>
             </div>
 
             <!-- Project 13: MRF Construction -->
-            <div class="project-card animate-on-scroll" 
-                 data-title="MRF Construction"
-                 data-img="assets/images/projects/MRF Construction.jpg">
+            <div class="project-card animate-on-scroll" data-title="MRF Construction"
+              data-img="assets/images/projects/MRF Construction.jpg">
               <div class="project-img-wrapper">
                 <img src="assets/images/projects/MRF Construction.jpg" alt="MRF Construction" loading="lazy">
                 <div class="project-card-overlay">
@@ -1368,11 +1384,11 @@
             </div>
 
             <!-- Project 14: Installation of Chilled Water Line -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Installation of Chilled Water Line"
-                 data-img="assets/images/projects/Installation of Chilled Water Line.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Installation of Chilled Water Line"
+              data-img="assets/images/projects/Installation of Chilled Water Line.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Installation of Chilled Water Line.jpg" alt="Installation of Chilled Water Line" loading="lazy">
+                <img src="assets/images/projects/Installation of Chilled Water Line.jpg"
+                  alt="Installation of Chilled Water Line" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1383,11 +1399,11 @@
             </div>
 
             <!-- Project 15: Fabrication of Water Tank -->
-            <div class="project-card animate-on-scroll" 
-                 data-title="Fabrication of Water Tank"
-                 data-img="assets/images/projects/Fabrication of Water Tank.jpg">
+            <div class="project-card animate-on-scroll" data-title="Fabrication of Water Tank"
+              data-img="assets/images/projects/Fabrication of Water Tank.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Fabrication of Water Tank.jpg" alt="Fabrication of Water Tank" loading="lazy">
+                <img src="assets/images/projects/Fabrication of Water Tank.jpg" alt="Fabrication of Water Tank"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1398,11 +1414,11 @@
             </div>
 
             <!-- Project 16: Fabrication of SS Water Strainer -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Fabrication of SS Water Strainer"
-                 data-img="assets/images/projects/Fabrication of SS Water Strainer.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Fabrication of SS Water Strainer"
+              data-img="assets/images/projects/Fabrication of SS Water Strainer.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Fabrication of SS Water Strainer.jpg" alt="Fabrication of SS Water Strainer" loading="lazy">
+                <img src="assets/images/projects/Fabrication of SS Water Strainer.jpg"
+                  alt="Fabrication of SS Water Strainer" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1413,11 +1429,11 @@
             </div>
 
             <!-- Project 17: Electrical Load Transfer -->
-            <div class="project-card animate-on-scroll delay-2" 
-                 data-title="Electrical Load Transfer"
-                 data-img="assets/images/projects/Electrical Load Transfer.jpg">
+            <div class="project-card animate-on-scroll delay-2" data-title="Electrical Load Transfer"
+              data-img="assets/images/projects/Electrical Load Transfer.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Electrical Load Transfer.jpg" alt="Electrical Load Transfer" loading="lazy">
+                <img src="assets/images/projects/Electrical Load Transfer.jpg" alt="Electrical Load Transfer"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1428,11 +1444,11 @@
             </div>
 
             <!-- Project 18: Construction of Underground Gutter -->
-            <div class="project-card animate-on-scroll" 
-                 data-title="Construction of Underground Gutter"
-                 data-img="assets/images/projects/Construction of Underground Gutter.jpg">
+            <div class="project-card animate-on-scroll" data-title="Construction of Underground Gutter"
+              data-img="assets/images/projects/Construction of Underground Gutter.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Construction of Underground Gutter.jpg" alt="Construction of Underground Gutter" loading="lazy">
+                <img src="assets/images/projects/Construction of Underground Gutter.jpg"
+                  alt="Construction of Underground Gutter" loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1443,11 +1459,11 @@
             </div>
 
             <!-- Project 19: Construction of Safety Office -->
-            <div class="project-card animate-on-scroll delay-1" 
-                 data-title="Construction of Safety Office"
-                 data-img="assets/images/projects/Construction of Safety Office.jpg">
+            <div class="project-card animate-on-scroll delay-1" data-title="Construction of Safety Office"
+              data-img="assets/images/projects/Construction of Safety Office.jpg">
               <div class="project-img-wrapper">
-                <img src="assets/images/projects/Construction of Safety Office.jpg" alt="Construction of Safety Office" loading="lazy">
+                <img src="assets/images/projects/Construction of Safety Office.jpg" alt="Construction of Safety Office"
+                  loading="lazy">
                 <div class="project-card-overlay">
                   <div class="project-zoom-btn"><i class="fas fa-magnifying-glass-plus"></i></div>
                 </div>
@@ -1521,8 +1537,7 @@
       <div class="container">
         <div class="section-header center">
           <h2 class="section-title" style="color: var(--accent-500);">Contact Us</h2>
-          <p class="section-subtitle">Reach out directly via our landline numbers or email addresses for inquiries,
-            product specifications, and project quotations.</p>
+          <p class="section-subtitle">Reach out directly via our landline numbers or email addresses for inquiries.</p>
         </div>
 
         <div class="contact-grid-simple">
@@ -1532,7 +1547,6 @@
               <i class="fas fa-phone"></i>
             </div>
             <h3>Landlines</h3>
-            <p class="contact-card-desc">Call our main office lines:</p>
             <div class="contact-links-list">
               <a href="tel:+63288923949" class="contact-action-link">
                 <i class="fas fa-phone-alt"></i> (+632) 8892-3949
@@ -1552,7 +1566,6 @@
               <i class="fas fa-fax"></i>
             </div>
             <h3>Telefax</h3>
-            <p class="contact-card-desc">Dedicated line for facsimile:</p>
             <div class="contact-links-list">
               <a href="tel:+63288122798" class="contact-action-link">
                 <i class="fas fa-fax"></i> (+632) 8812-2798
@@ -1565,15 +1578,10 @@
             <div class="contact-card-icon">
               <i class="fas fa-envelope"></i>
             </div>
-            <h3>Emails</h3>
-            <p class="contact-card-desc">Send us your messages or RFQs:</p>
+            <h3>Email</h3>
             <div class="contact-links-list">
-              <a href="mailto:drem747@drem.com.ph" class="contact-action-link email-btn" data-email="drem747@drem.com.ph">
-                <i class="fas fa-envelope-open-text"></i> drem747@drem.com.ph
-              </a>
-              <a href="mailto:dremindustrialsales@gmail.com" class="contact-action-link email-btn"
-                data-email="dremindustrialsales@gmail.com">
-                <i class="fas fa-envelope-open-text"></i> dremindustrialsales@gmail.com
+              <a href="mailto:sales@drem.com.ph" class="contact-action-link email-btn" data-email="sales@drem.com.ph">
+                <i class="fas fa-envelope-open-text"></i> sales@drem.com.ph
               </a>
             </div>
           </div>
@@ -1585,7 +1593,7 @@
             </div>
             <h3>Office Details</h3>
             <p class="contact-address">
-              2/F DQA Bldg., 1634 Caton St.,<br>
+              2/F, DQA Bldg., 1634 Caton St.,<br>
               La Paz, Makati City, NCR 4th District,<br>
               Philippines 1204
             </p>
@@ -1608,9 +1616,11 @@
       <div class="footer-simple-content">
         <div class="footer-brand-block">
           <a href="#about" aria-label="DREM Industrial Sales, Inc.">
-            <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986" class="footer-logo-img">
+            <img src="assets/images/logo-stacked.png" alt="DREM Industrial Sales, Inc. Since 1986"
+              class="footer-logo-img">
           </a>
-          <p>Your trusted partner for quality industrial products, maintenance chemicals, refractories, firefighting
+          <p>Your trusted partner for quality industrial products, maintenance chemicals, water treatment services,
+            firefighting
             systems, civil works, and regulatory compliance across the Philippines.</p>
         </div>
 
@@ -1629,15 +1639,14 @@
           <h4>Inquiries & Support</h4>
           <ul>
             <li><a href="tel:+63288923949"><i class="fas fa-phone"></i> (+632) 8892-3949</a></li>
-            <li><a href="mailto:drem747@drem.com.ph"><i class="fas fa-envelope"></i> drem747@drem.com.ph</a></li>
-            <li><a href="mailto:dremindustrialsales@gmail.com"><i class="fas fa-envelope"></i> dremindustrialsales@gmail.com</a></li>
+            <li><a href="mailto:sales@drem.com.ph"><i class="fas fa-envelope"></i> sales@drem.com.ph</a></li>
             <li><span><i class="fas fa-clock"></i> Mon–Fri 9:00 AM – 6:00 PM</span></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 DREM Industrial Sales, Inc. All rights reserved.</p>
+        <p>&copy; 2026 Drem Industrial Sales, Inc. All rights reserved.</p>
       </div>
     </div>
   </footer>
