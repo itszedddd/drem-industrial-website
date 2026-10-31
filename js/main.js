@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (titleEl) titleEl.textContent = title;
       if (descEl) descEl.textContent = `Addressed to ${email}`;
       if (mailtoLink) {
-        mailtoLink.href = `mailto:${email}?subject=${encodeURIComponent('Inquiry - DREM Industrial Sales')}`;
+        mailtoLink.href = `mailto:${email}?subject=${encodeURIComponent('Inquiry - Drem Industrial Sales, Inc.')}`;
       }
       if (copyBtn) {
         copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy Address';
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.email-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const email = btn.getAttribute('data-email') || 'drem747@drem.com.ph';
-        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent('Inquiry - DREM Industrial Sales')}`;
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent('Inquiry - Drem Industrial Sales, Inc.')}`;
         
         // Ensure link opens Gmail
         btn.setAttribute('href', gmailUrl);
